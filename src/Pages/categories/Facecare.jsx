@@ -388,119 +388,186 @@ useEffect(()=>{
 
 const DIV = styled.div`
   
-    .container{
+    .container {
         padding: 40px;
         width: 100%;
     }
-    .Facecare{
+
+    .Facecare {
         display: flex;
         justify-content: left;
         gap: 20px;
         padding-top: 20px;
         padding-left: 20px;
     }
-    .Facecare img{
+
+    .Facecare img {
         width: 10%;
         transition: transform 0.2s;
-
     }
-    .Facecare img:active{
-        
+
+    .Facecare img:active {
         transform: scale(1.2);
     }
 
-    .container h1{
+    .container h1 {
         font-size: 30px;
         font-weight: 600;
         padding-left: 27px;
         opacity: 0.8;
     }
-    .container p{
+
+    .container p {
         padding-left: 27px;
         opacity: 0.6;
     }
-    .category{
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+    .category {
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
         margin: 20px;
         width: 300px;
         height: 200px;
         align-items: center;
-        align-content: center;
         text-align: center;
         padding: 10px;
         margin-left: 60px;
         position: relative;
         text-align: left;
-}
-label{
-  /* margin-right: 200px; */
-  text-align: left;
-}
-.category h1{
-    font-size: 17px;
-    text-align: center;
-    padding: 10px;
-}
+    }
 
+    label {
+        text-align: left;
+    }
 
+    .category h1 {
+        font-size: 17px;
+        text-align: center;
+        padding: 10px;
+    }
 
     .white-checkbox {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 15px;
-  height: 15px;
-  border: 2px solid #d6dade; /* Set the border color */
-  background-color: #e6e9ec; //
-  border-radius: 50%;
-  outline: none;
-  position: absolute;
-  cursor: pointer;
-  right: 10px;
-  margin-top: 3px;
-  
-}
-.white-checkbox:checked {
-  background-color: #e80071;
-  border: none;
-  
-  
-}
-.box{
-    display: flex;
-}
+        appearance: none;
+        -webkit-appearance: none;
+        width: 15px;
+        height: 15px;
+        border: 2px solid #d6dade;
+        background-color: #e6e9ec;
+        border-radius: 50%;
+        outline: none;
+        position: absolute;
+        cursor: pointer;
+        right: 10px;
+        margin-top: 3px;
+    }
 
-.product{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-}
+    .white-checkbox:checked {
+        background-color: #e80071;
+        border: none;
+    }
 
-.pagination{
-    text-align: center;
-    padding: 50px;
-    margin-left: 360px;
-}
-.pagination button{
-    background-color: white;
-    width: 45px;
-    height: 45px;
-    color: #e80071;
-    font-weight: 600;
-    font-size: 20px;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-radius: 50%;
-}
-.pagination span{
-    
-    width: 50px;
-    height: 50px;
-    color:#e80071 ;
-    font-weight: 600;
-    font-size: 17px;
-    
-    border-radius: 50%;
-    
-    margin: 0px 10px 0px 10px;
-}
+    .box {
+        display: flex;
+    }
 
+    .product {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
 
-`
+    .product-card {
+        position: relative;
+        background-color: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .addtocart {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        right: 10px;
+        z-index: 2;
+        padding: 10px;
+    }
+
+    .addtocart button {
+        background-color: #e80071;
+        padding: 12px 0;
+        color: white;
+        font-weight: 600;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s ease;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    }
+
+    .addtocart button:hover {
+        background-color: #a10450;
+        transform: scale(1.05);
+    }
+
+    .addtocart button:active {
+        transform: scale(0.95);
+    }
+
+    .pagination {
+        text-align: center;
+        padding: 50px;
+        margin-left: 360px;
+    }
+
+    .pagination button {
+        background-color: white;
+        width: 45px;
+        height: 45px;
+        color: #e80071;
+        font-weight: 600;
+        font-size: 20px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        border-radius: 50%;
+    }
+
+    .pagination span {
+        width: 50px;
+        height: 50px;
+        color: #e80071;
+        font-weight: 600;
+        font-size: 17px;
+        border-radius: 50%;
+        margin: 0px 10px 0px 10px;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+        .product {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .addtocart {
+            padding: 5px;
+        }
+
+        .addtocart button {
+            padding: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .product {
+            grid-template-columns: 1fr;
+        }
+
+        .addtocart button {
+            padding: 8px;
+            font-size: 14px;
+        }
+    }
+`;

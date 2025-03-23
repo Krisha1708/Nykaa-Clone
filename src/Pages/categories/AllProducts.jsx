@@ -266,79 +266,65 @@ const handleHair = ()=>{
 
 const DIV = styled.div`
 
-    .container{
+    .container {
         padding: 40px;
         width: 100%;
     }
 
-    .Facecare{
+    .Facecare {
         display: flex;
         justify-content: left;
         gap: 20px;
         padding-top: 20px;
         padding-left: 20px;
+        flex-wrap: wrap;
     }
 
-    .Facecare img{
+    .Facecare img {
         width: 10%;
         transition: transform 0.2s;
     }
 
-    .Facecare img:active{
+    .Facecare img:active {
         transform: scale(1.2);
     }
 
-    .container h1{
+    .container h1 {
         font-size: 30px;
         font-weight: 600;
         padding-left: 27px;
         opacity: 0.8;
     }
 
-    .container p{
+    .container p {
         padding-left: 27px;
         opacity: 0.6;
     }
 
-    .category{
+    .category, .category2 {
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        margin: 20px;
         width: 300px;
+        padding: 10px;
+        margin: 20px 20px 20px 60px;
+        position: relative;
+        text-align: left;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .category {
         height: 150px;
-        align-items: center;
-        text-align: center;
-        padding: 10px;
-        margin-left: 60px;
-        position: relative;
-        text-align: left;
     }
 
-    .category2{
-        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        margin: 20px;
-        width: 300px;
+    .category2 {
         height: 320px;
-        align-items: center;
-        text-align: center;
-        padding: 10px;
-        margin-left: 60px;
-        position: relative;
+    }
+
+    label {
         text-align: left;
     }
 
-    label{
-        text-align: left;
-    }
-
-    .category h1{
-        font-size: 17px;
-        text-align: center;
-        padding: 10px;
-        font-weight: 600;
-        opacity: 0.9;
-    }
-
-    .category2 h1{
+    .category h1, .category2 h1 {
         font-size: 17px;
         text-align: center;
         padding: 10px;
@@ -359,6 +345,7 @@ const DIV = styled.div`
         cursor: pointer;
         right: 10px;
         margin-top: 3px;
+        transition: background-color 0.3s ease;
     }
 
     .white-checkbox:checked {
@@ -366,35 +353,63 @@ const DIV = styled.div`
         border: none;
     }
 
-    .box{
+    .box {
         display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: flex-start;
     }
 
-    .product{
+    .product {
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 20px;
+    }
+
+    @media (max-width: 1024px) {
+        .product {
+            grid-template-columns: repeat(2, 1fr);
+        }
     }
 
     @media (max-width: 768px) {
         .product {
             grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .category, .category2 {
+            margin-left: 20px;
+            width: 90%;
         }
     }
 
     @media (max-width: 480px) {
         .product {
             grid-template-columns: 1fr;
+            gap: 10px;
+        }
+
+        .category, .category2 {
+            margin-left: 0;
+            width: 100%;
+        }
+
+        .container h1 {
+            font-size: 24px;
         }
     }
 
-    .pagination{
+    .pagination {
         text-align: center;
         padding: 50px;
-        margin-left: 360px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
     }
 
-    .pagination button{
+    .pagination button {
         background-color: white;
         width: 45px;
         height: 45px;
@@ -403,29 +418,39 @@ const DIV = styled.div`
         font-size: 20px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.2s ease;
     }
 
-    .pagination span{
+    .pagination button:hover {
+        transform: scale(1.1);
+    }
+
+    .pagination span {
         width: 50px;
         height: 50px;
-        color:#e80071;
+        color: #e80071;
         font-weight: 600;
         font-size: 17px;
         border-radius: 50%;
-        margin: 0px 10px 0px 10px;
+        margin: 0px 10px;
     }
 
-    #lowerNav button{
+    #lowerNav button {
         color: #72717f;
         font-size: 14px;
         margin-right: 50px;
+        background: none;
+        border: none;
+        cursor: pointer;
     }
 
-    #lowerNav button:hover{
+    #lowerNav button:hover {
         color: #fc2779;
     }
 
-    #lowerNav{
+    #lowerNav {
         text-align: center;
         background-color: white;
         padding: 10px;

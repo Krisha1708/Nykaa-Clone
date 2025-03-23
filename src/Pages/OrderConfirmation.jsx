@@ -24,40 +24,71 @@ export const OrderConfirmation = () => {
 }
 
 const DIV = styled.div`
-.order{
-display: grid;
-place-items:center;
-padding: 50px;
+  .order {
+    display: grid;
+    place-items: center;
+    padding: 50px;
+    gap: 15px;
+  }
 
-}
-.order h2{
-    font-size: 14px;
+  .order h2 {
+    font-size: clamp(12px, 2vw, 14px); /* Responsive font size */
     padding: 10px;
     border: 0.1px solid #7db3ea;
     border-radius: 10px;
     background-color: #cae1f6;
     margin: 10px;
     margin-bottom: 50px;
-}
-.order h3{
+    text-align: center;
+  }
+
+  .order h3 {
     margin-top: 100px;
     border: 1px solid #bfbcbd;
-    padding: 10px 40px 10px 40px;
+    padding: 10px 40px;
     border-radius: 5px;
-}
+    font-size: clamp(14px, 2vw, 18px);
+  }
 
-.order h1{
-    font-size: 30px;
+  .order h1 {
+    font-size: clamp(26px, 3vw, 30px);
     margin: 10px;
-}
-.order p{
+  }
+
+  .order p {
     width: 340px;
     text-align: center;
-}
-.order button{
-    color:#fc2779 ;
-    font-size: 18px;
-    margin: 5px;
-}
+    font-size: clamp(12px, 1.8vw, 14px);
+  }
 
-`
+  .order button {
+    color: #fc2779;
+    font-size: clamp(16px, 2vw, 18px);
+    margin: 5px;
+    padding: 8px 16px;
+    border: 1px solid #fc2779;
+    border-radius: 8px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .order button:hover {
+    background-color: #fc2779;
+    color: white;
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .order {
+      padding: 30px;
+    }
+    .order p {
+      width: 280px;
+    }
+    .order h3 {
+      margin-top: 50px;
+      padding: 10px 20px;
+    }
+  }
+`;

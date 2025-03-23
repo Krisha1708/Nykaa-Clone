@@ -396,98 +396,133 @@ export const AddressPage = () => {
 }
 
 const DIV = styled.div`
-     
-      .address{
-        padding: 20px;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
+  .address {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
 
-        .savedinfo{
-            width: 35%;
-            height: fit-content;
-            border: 0.1px solid #dedbdb;
-            margin-top: 18px;
-            padding: 20px;
-            background-color: #ffffff;
-            border-radius: 10px;
-        }
-        .savedinfo h1{
-            font-size: 15px;
-            font-weight: 600;
-            opacity: 0.9;
-            margin-bottom: 2px;
+  .savedinfo {
+    width: 35%;
+    border: 1px solid #dedbdb;
+    margin-top: 18px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
 
-        }
-        .savedinfo p{
-            font-size: 14px;
-            font-weight: 500;
-            opacity: 0.9;
-        }
+  .savedinfo h1 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    opacity: 0.9;
+    margin-bottom: 4px;
+  }
 
-        .chakraAddress{
-            width: 40%;
-        }
-        .upper{
-            margin-bottom: 10px;
-        }
-        .upper h1{
-            font-size: 30px;
-            font-weight: 700;
-           
-        }
-        .upper p{
-            font-size: 14px;
-            opacity: 0.7;
-        }
-        .flex button:nth-child(1){
-           padding: 10px 25px 10px 25px;
-           border-radius: 10px;
-           border: 0.1px solid grey;
-           margin: 10px;
-           margin-left: 0px;
-           font-size: 14px;
-           opacity: 0.9;
+  .savedinfo p {
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.8;
+  }
 
-        }
-        .flex button:nth-child(2){
-           padding: 10px 35px 10px 35px;
-           border-radius: 10px;
-           margin: 10px;
-           margin-left: 0px;
-           color: white;
-           font-size: 14px;
-           background-color:#fc2779 ;
-        }
-    
-    .container{
-       width: 80%;
-       margin: auto;
-       margin-top: 20px;
-       padding: 10px;
+  .chakraAddress {
+    width: 55%;
+  }
+
+  .upper {
+    margin-bottom: 10px;
+  }
+
+  .upper h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+  }
+
+  .upper p {
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+
+  .flex button:nth-child(1) {
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: 1px solid grey;
+    margin: 10px 10px 10px 0;
+    font-size: 1rem;
+    opacity: 0.9;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .flex button:nth-child(1):hover {
+    background-color: #f7f7f7;
+  }
+
+  .flex button:nth-child(2) {
+    padding: 10px 30px;
+    border-radius: 10px;
+    margin: 10px 0;
+    color: white;
+    font-size: 1rem;
+    background-color: #fc2779;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+
+  .flex button:nth-child(2):hover {
+    background-color: #e61e68;
+  }
+
+  .container {
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  @media (max-width: 1024px) {
+    .address {
+      flex-direction: column;
+      align-items: center;
     }
-
-    @media (max-width: 768px) {
-        .address {
-            flex-direction: column;
-        }
-        .savedinfo, .chakraAddress {
-            width: 100%;
-            margin-top: 10px;
-        }
+    .savedinfo,
+    .chakraAddress {
+      width: 100%;
+      margin-top: 10px;
     }
+  }
 
-    @media (max-width: 480px) {
-        .upper h1 {
-            font-size: 24px;
-        }
-        .savedinfo p, .savedinfo h1 {
-            font-size: 13px;
-        }
-        .flex button:nth-child(1), .flex button:nth-child(2) {
-            padding: 10px;
-            font-size: 12px;
-        }
+  @media (max-width: 768px) {
+    .upper h1 {
+      font-size: 1.8rem;
     }
-`
+    .savedinfo p,
+    .savedinfo h1 {
+      font-size: 0.9rem;
+    }
+    .flex button {
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .upper h1 {
+      font-size: 1.5rem;
+    }
+    .savedinfo p,
+    .savedinfo h1 {
+      font-size: 0.8rem;
+    }
+    .flex button {
+      padding: 8px;
+      font-size: 0.8rem;
+    }
+    .container {
+      width: 90%;
+    }
+  }
+`;

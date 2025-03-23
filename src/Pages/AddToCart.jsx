@@ -1,4 +1,3 @@
-// AddToCartPage.js
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart ,decreaseQuantity,addToCart} from '../Redux/CartReducer/action';

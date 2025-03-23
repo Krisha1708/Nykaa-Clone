@@ -112,6 +112,8 @@ const DIV = styled.div`
     color: white;
     font-size: 14px;
     flex-wrap: wrap;
+    gap: 20px;
+    box-sizing: border-box;
 }
 
 .footer1 input {
@@ -119,6 +121,7 @@ const DIV = styled.div`
     border-bottom: 2px solid white;
     margin-top: 10px;
     padding: 3px;
+    width: 100%;
 }
 
 .footer1 input:focus {
@@ -138,13 +141,14 @@ const DIV = styled.div`
     letter-spacing: 1px;
 }
 
-.footer1 p {
+.footer1 p, .footer1 h5 {
     font-size: 15px;
 }
 
 .footer1 img {
-    width: 70%;
+    width: 50%;
     margin-top: 10px;
+    max-width: 200px;
 }
 
 .footer1 h6 {
@@ -153,20 +157,23 @@ const DIV = styled.div`
 
 .footer2 {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     background-color: #8c8d94;
-    padding: 50px 155px;
+    padding: 50px;
     color: white;
     gap: 20px;
+    box-sizing: border-box;
 }
 
 .footer2 p {
     margin-top: 10px;
-    font-size: 12px;
+    font-size: 13px;
+    line-height: 1.5;
 }
 
 .footer2 div h3 {
-    margin-bottom: 40px;
+    margin-bottom: 15px;
+    font-size: 18px;
 }
 
 .logo {
@@ -178,13 +185,15 @@ const DIV = styled.div`
     font-size: 12px;
     color: white;
     text-align: center;
-    padding: 40px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .footer3 > div {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
 @media (max-width: 768px) {
@@ -192,15 +201,23 @@ const DIV = styled.div`
         flex-direction: column;
         align-items: center;
         padding: 20px;
+        text-align: center;
+    }
+
+    .footer1 input, .footer1 button {
+        width: 90%;
     }
 
     .footer2 {
-        grid-template-columns: repeat(2, 1fr);
         padding: 30px;
     }
 
+    .footer2 p {
+        font-size: 12px;
+    }
+
     .footer3 {
-        padding: 20px;
+        padding: 15px;
     }
 }
 
@@ -210,8 +227,8 @@ const DIV = styled.div`
     }
 
     .footer2 {
-        grid-template-columns: 1fr;
         padding: 20px;
+        grid-template-columns: 1fr;
     }
 
     .footer3 {

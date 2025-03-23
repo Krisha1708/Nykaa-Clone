@@ -153,41 +153,46 @@ export const Navbar = () => {
             <nav>
                 <div className='wrapper'>
 
+                    <div className='logo'>
+                    <a style={{ fontSize: "40px", fontWeight: "800", color: "#fc2779" }} onClick={() => navigate('/')} className='logo' href="#">NYKAA</a>
+                    </div>
 
-                    <ul className='navlinks'>
-                        <li><a style={{ fontSize: "40px", fontWeight: "800", color: "#fc2779" }} onClick={() => navigate('/')} className='logo' href="#">NYKAA</a></li>
 
-                        <li
-                            className="hover-button"
-                            onMouseEnter={handleHover}
-                        >
-                            <a onClick={() => navigate('/allproducts')} href="#">Categories</a>
-                        </li>
+                    <div className='navlinks'>
+                        <ul className='navlinks'>
 
-                        <li>
-                            <a className='brand' href="#">Brands</a>
-                            <div className="mega-box">
-                                <div className="content">
+                            <li
+                                className="hover-button"
+                                onMouseEnter={handleHover}
+                            >
+                                <a onClick={() => navigate('/allproducts')} href="#">Categories</a>
+                            </li>
 
-                                    <div className="row">
-                                        <header>Top Brands</header>
-                                        <ul class="mega-links">
-                                            <li><img src="https://adn-static2.nykaa.com/media/wysiwyg/2019/Maybelline1211.png" alt="" /></li>
-                                            <li><img src="https://adn-static2.nykaa.com/media/wysiwyg/lakme_mega_menu_header.png" alt="" /></li>
-                                            <li><img src="https://adn-static2.nykaa.com/media/wysiwyg/2019/lorealparis.png" alt="" /></li>
-                                            <li><img src="https://adn-static2.nykaa.com/media/wysiwyg/cms/beauty/menu/mac.png" alt="" /></li>
-                                            <li><img src="https://adn-static2.nykaa.com/media/wysiwyg/2018/Biotique_new.png" alt="" /></li>
+                            <li>
+                                <a className='brand' href="#">Brands</a>
+                                <div className="mega-box">
+                                    <div className="content">
 
-                                        </ul>
+                                        <div className="row">
+                                            <header>Top Brands</header>
+                                            <ul class="mega-links">
+                                                <li><img src="https://adn-static2.nykaa.com/media/wysiwyg/2019/Maybelline1211.png" alt="" /></li>
+                                                <li><img src="https://adn-static2.nykaa.com/media/wysiwyg/lakme_mega_menu_header.png" alt="" /></li>
+                                                <li><img src="https://adn-static2.nykaa.com/media/wysiwyg/2019/lorealparis.png" alt="" /></li>
+                                                <li><img src="https://adn-static2.nykaa.com/media/wysiwyg/cms/beauty/menu/mac.png" alt="" /></li>
+                                                <li><img src="https://adn-static2.nykaa.com/media/wysiwyg/2018/Biotique_new.png" alt="" /></li>
+
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
-                        </li>
-                        <li><a href="#">Luxe</a></li>
-                        <li><a href="#">Nykaa Fashion</a></li>
-                        <li><a href="#">Beauty Advice</a></li>
-                    </ul>
+                            </li>
+                            <li><a href="#">Luxe</a></li>
+                            <li><a href="#">Nykaa Fashion</a></li>
+                            <li><a href="#">Beauty Advice</a></li>
+                        </ul>
+                    </div>
 
                     <div className='inputSection'>
                         <div className='searchDiv'>
@@ -312,6 +317,7 @@ const DIV = styled.div`
     
 	  
   }
+
 
   .upperNav a {
     margin-right: 15px;
@@ -690,7 +696,4 @@ li:hover .mega-box{
 //     color: black;
 //     border: 2px solid #e80071;
 // }
-
-
-
 `

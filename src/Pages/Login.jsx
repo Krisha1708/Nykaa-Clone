@@ -95,8 +95,12 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     height: 100vh;
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px;
   }
 `;
 
@@ -125,8 +129,12 @@ const Title = styled.h2`
   font-weight: 600;
   padding-bottom: 20px;
 
-  @media (max-width: 480px) {
+  @media (max-width: 768px) {
     font-size: 18px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 16px;
   }
 `;
 
@@ -141,6 +149,11 @@ const Input = styled.input`
 
   @media (max-width: 768px) {
     width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px 16px;
+    height: 45px;
   }
 `;
 
@@ -163,6 +176,11 @@ const SubmitButton = styled.button`
   &:active {
     background-color: white;
     color: #e80071;
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px 12px;
+    font-size: 13px;
   }
 
   @media (max-width: 480px) {
@@ -191,6 +209,10 @@ const Toggle = styled.div`
 const Message = styled.p`
   font-size: 14px;
   color: red;
+
+  @media (max-width: 768px) {
+    font-size: 13px;
+  }
 
   @media (max-width: 480px) {
     font-size: 12px;

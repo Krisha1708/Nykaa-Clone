@@ -531,8 +531,23 @@ const DIV = styled.div`
         border-radius: 10px;
     }
 
+    /* ✅ Responsive Media Queries */
+    @media (max-width: 1024px) {
+        .topBrands2 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .topBrands4 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+        .focus2 img {
+            width: 160px;
+        }
+    }
+
     @media (max-width: 768px) {
-        .topBrands, .topBrands2, .topBrands4 {
+        .topBrands,
+        .topBrands2,
+        .topBrands4 {
             grid-template-columns: repeat(2, 1fr);
         }
         .focus2 img {
@@ -541,7 +556,10 @@ const DIV = styled.div`
     }
 
     @media (max-width: 480px) {
-        .topBrands, .topBrands2, .topBrands4, .topBrands5 {
+        .topBrands,
+        .topBrands2,
+        .topBrands4,
+        .topBrands5 {
             grid-template-columns: 1fr;
         }
         .focus2 {
@@ -551,4 +569,4 @@ const DIV = styled.div`
             width: 100%;
         }
     }
-`
+`;

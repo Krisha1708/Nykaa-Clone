@@ -393,95 +393,128 @@ useEffect(()=>{
 }
 
 const DIV = styled.div`
-    .container{
-        padding: 40px;
-        width: 100%;
-    }
-    .makeup{
-        display: flex;
-        justify-content: left;
-        gap: 20px;
-        padding-top: 20px;
-        padding-left: 20px;
-    }
-    .makeup img{
-        width: 10%;
-        transition: transform 0.2s;
-    }
-    .makeup img:active{
-        
-        transform: scale(1.2);
-    }
-    .container h1{
-        font-size: 30px;
-        font-weight: 600;
-        padding-left: 27px;
-        opacity: 0.8;
-    }
-    .container p{
-        padding-left: 27px;
-        opacity: 0.6;
-    }
-    .category{
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        margin: 20px;
-        width: 300px;
-        height: 200px;
-        align-items: center;
-        align-content: center;
-        text-align: center;
-        padding: 10px;
-        margin-left: 60px;
-        position: relative;
-        text-align: left;
-}
-label{
-  /* margin-right: 200px; */
-  text-align: left;
-}
-.category h1{
-    font-size: 17px;
-    text-align: center;
-    padding: 10px;
+
+/* Global Container */
+.container {
+    padding: 40px;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
 }
 
-
-
-    .white-checkbox {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 15px;
-  height: 15px;
-  border: 2px solid #d6dade; /* Set the border color */
-  background-color: #e6e9ec; //
-  border-radius: 50%;
-  outline: none;
-  position: absolute;
-  cursor: pointer;
-  right: 10px;
-  margin-top: 3px;
-  
+/* Header Text */
+.container h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    padding-left: 20px;
+    opacity: 0.85;
+    color: #333;
 }
-.white-checkbox:checked {
-  background-color: #e80071;
-  border: none;
-  
-  
+
+.container p {
+    padding-left: 20px;
+    opacity: 0.6;
+    color: #555;
 }
-.box{
+
+/* Makeup Category Images */
+.makeup {
     display: flex;
-}
-.product{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
+    justify-content: flex-start;
+    gap: 20px;
+    padding-top: 20px;
+    padding-left: 20px;
+    flex-wrap: wrap;
 }
 
-.pagination{
-    text-align: center;
-    padding: 50px;
-    margin-left: 360px;
+.makeup img {
+    width: 100px;
+    transition: transform 0.2s;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 2px solid #f1f1f1;
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 15px;
 }
-.pagination button{
+
+.makeup img:active {
+    transform: scale(1.2);
+}
+
+/* Category Box */
+.category {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 8px 24px;
+    margin: 20px;
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: #fff;
+}
+
+.category h1 {
+    font-size: 1.2rem;
+    text-align: center;
+    padding-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+label {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    color: #555;
+    font-size: 1rem;
+}
+
+/* Custom Checkbox */
+.white-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border: 2px solid #d6dade;
+    background-color: #e6e9ec;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: all 0.2s ease;
+}
+
+.white-checkbox:checked {
+    background-color: #e80071;
+    border: none;
+    box-shadow: 0 0 10px rgba(232, 0, 113, 0.2);
+}
+
+/* Layout Box */
+.box {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+/* Product Grid */
+.product {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Pagination */
+.pagination {
+    text-align: center;
+    padding: 30px;
+}
+
+.pagination button {
     background-color: white;
     width: 45px;
     height: 45px;
@@ -490,21 +523,74 @@ label{
     font-size: 20px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease;
+    margin: 0 10px;
 }
-.pagination span{
-    
+
+.pagination button:hover {
+    background-color: #e80071;
+    color: white;
+}
+
+.pagination button:disabled {
+    background-color: #f2f2f2;
+    color: #bbb;
+    cursor: not-allowed;
+}
+
+.pagination span {
     width: 50px;
     height: 50px;
-    color:#e80071 ;
+    color: #e80071;
     font-weight: 600;
-    font-size: 17px;
-    
+    font-size: 1.2rem;
     border-radius: 50%;
-    
-    margin: 0px 10px 0px 10px;
+    margin: 0 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .makeup {
+        justify-content: center;
+    }
+    .box {
+        flex-direction: column;
+        align-items: center;
+    }
+    .category {
+        max-width: 90%;
+    }
+    .product {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+}
 
-
-
-`
+@media (max-width: 480px) {
+    .container h1 {
+        font-size: 1.5rem;
+    }
+    .container p {
+        font-size: 0.9rem;
+    }
+    .makeup img {
+        width: 80px;
+    }
+    .category {
+        height: auto;
+        padding: 15px;
+    }
+    .pagination button {
+        width: 35px;
+        height: 35px;
+        font-size: 18px;
+    }
+    .pagination span {
+        font-size: 1rem;
+    }
+}
+`;

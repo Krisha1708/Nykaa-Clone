@@ -255,257 +255,283 @@ export const Payment = () => {
 
 const DIV = styled.div`
 
-.container{
+/* Container */
+.container {
     width: 80%;
-    margin: auto;
-    margin-top: 20px;
+    margin: 20px auto;
 }
-.rightcart{
+
+/* Right Cart */
+.rightcart {
     width: 300px;
-    
 }
-.payment h1{
-    font-size: 34px;
+
+/* Payment Section */
+.payment h1 {
+    font-size: clamp(28px, 3vw, 34px);
     font-weight: 600;
     opacity: 0.9;
 }
-.payment p{
+.payment p {
     font-size: 15px;
     opacity: 0.8;
-}
-.payment p{
     margin-bottom: 10px;
 }
 
-
-.paymentOptions{
+/* Payment Options */
+.paymentOptions {
     display: flex;
     justify-content: space-between;
+    gap: 10px;
 }
-.card{
+
+/* Card */
+.card {
     border: 0.1px solid grey;
     display: flex;
     padding: 10px;
     border-radius: 10px;
 }
 
-
-.options1{
+/* Options */
+.options1 {
     display: flex;
     gap: 10px;
     width: 350px;
     padding-left: 10px;
-    /* border: 2px solid green; */
+    cursor: pointer;
 }
-.options1:active{
+.options1:active {
     background-color: #bdbdbd;
     border-radius: 10px;
 }
-.options1 button{
+.options1 button {
     text-align: left;
-    /* border: 2px solid red; */
     padding: 10px 30px 10px 10px;
-    width: 350px;
-    
+    width: 100%;
 }
-.options1 span{
+.options1 span {
     font-size: 14px;
     opacity: 0.9;
 }
-.creditcard{
-width: 400px;
-height: 300px;
-/* border: 2px solid red; */
-border-left: .1px solid grey;
-padding: 10px;
-margin-left: 10px;
-padding-left: 20px;
+
+/* Credit Card Section */
+.creditcard {
+    max-width: 400px;
+    min-width: 280px;
+    height: auto;
+    border-left: 0.1px solid grey;
+    padding: 20px;
+    margin-left: 10px;
 }
-.creditcard h1{
+.creditcard h1 {
     font-size: 20px;
     font-weight: 600;
     opacity: 0.9;
     margin: 5px;
 }
-.creditcard img{
+.creditcard img {
     width: 60%;
     margin: 5px;
-   
 }
-.creditcard input{
+.creditcard input {
     background-color: #f3f4f5;
     padding: 10px;
     margin: 5px;
     border-radius: 10px;
-
-    
+    border: none;
 }
-
-.creditcard input::placeholder{
+.creditcard input::placeholder {
     color: #6e7983;
 }
-.creditcard button{
+.creditcard button {
     background-color: #e80071;
     text-align: center;
-    width: 354px;
+    width: 100%;
     border-radius: 10px;
     margin-top: 10px;
     padding: 10px;
     margin: 5px;
     color: white;
     font-weight: 600;
-
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.creditcard button:hover {
+    background-color: #c2035f;
 }
 
-  
-.upperPart{
-  font-size: 20px;
-  display: inline;
-  
-  
-  
-  
-}
-.quantity{
-  display: inline;
-  margin-left: 20px;
-  opacity: 0.7;
-}
-.cart{
-  border: 0.1px solid grey;
-  border-radius: 10px;
-  /* padding: 20px; */
-  
-  /* width: 300px; */
-}
-.cart img{
-  
-  width: 90px;
-  height: 90px;
-}
-.flex{
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  /* border: 0.1px solid grey; */
-  padding: 10px;
-
-}
-.flex h3{
-  line-height: 16px;
-  /* opacity: 0.9; */
-  color: #393939;
-  font-weight: 400;
-}
-.remove{
-  margin-top: -65px;
-  font-size:20px;
-  opacity: 0.7;
-}
-.below{
-  display: flex;
-  justify-content: space-between;
-  margin-top: -40px;
-  padding: 10px;
-  
-}
-.inc{
- 
- font-size: 18px;
- margin: 0px 5px 0px 5px;
+/* Upper Part */
+.upperPart {
+    font-size: 20px;
+    display: inline;
 }
 
-.quantity1 p{
-  display: inline;
-  color: #343434;
-  font-weight: 500;
-  font-size: 16px;
-}
-.details{
-  width: 300px;
-  height: 150px;
-  border: 0.1px solid grey;
-  border-radius: 10px;
-  margin-top: 20px;
-  padding: 10px;
-  line-height: 20px;
-}
-.details div{
-  display: flex;
-  justify-content: space-between;
-  margin-left: 10px;
-}
-.details>h1{
-  font-size: 17px;
+/* Quantity */
+.quantity {
+    display: inline;
+    margin-left: 20px;
+    opacity: 0.7;
 }
 
-.details p{
-  font-weight: 500;
-  color: #343434;
-  font-size: 13px;
+/* Cart Section */
+.cart {
+    border: 0.1px solid grey;
+    border-radius: 10px;
 }
 
-.place{
-  display: flex;
-  justify-content: space-between;
-  padding: 17px;
-  
-  position: sticky;
-  bottom: 0;
-  box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 0px 0px inset;
-  margin: 20px -20px 0px -20px;
-  background-color: white;
-  
-}
-.place p{
-  font-weight: 400;
-  opacity: 0.8;
-  margin-top: -20px;
-}
-.place button{
-  padding: 5px 30px 5px 30px;
-  background-color: #e80071;
-  font-size: 16px;
-  color: white;
-  font-weight: 700;
-  border-radius: 10px;
-  
-}
-.place button:active{
-  background-color: #c2035f;
-  font-size: 17px;
-  padding: 6px 31px 6px 31px;
+/* Cart Image */
+.cart img {
+    width: 90px;
+    height: 90px;
 }
 
-.noitem{
-      margin: auto;
-      text-align: center;
-      
-      width: 300px;
-      line-height: 23px;
-      height: 500px;
-      
+/* Flex Container */
+.flex {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 10px;
+}
+.flex h3 {
+    line-height: 16px;
+    color: #393939;
+    font-weight: 400;
+}
+
+/* Remove Button */
+.remove {
+    margin-top: -65px;
+    font-size: 20px;
+    opacity: 0.7;
+}
+
+/* Below Flex */
+.below {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -40px;
+    padding: 10px;
+}
+
+/* Increment Buttons */
+.inc {
+    font-size: 18px;
+    margin: 0 5px;
+}
+
+/* Quantity Display */
+.quantity1 p {
+    display: inline;
+    color: #343434;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* Details Section */
+.details {
+    max-width: 300px;
+    height: auto;
+    border: 0.1px solid grey;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 10px;
+    line-height: 20px;
+}
+.details div {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 10px;
+}
+.details > h1 {
+    font-size: 17px;
+}
+.details p {
+    font-weight: 500;
+    color: #343434;
+    font-size: 13px;
+}
+
+/* Place Order Section */
+.place {
+    display: flex;
+    justify-content: space-between;
+    padding: 17px;
+    position: sticky;
+    bottom: 0;
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 0px 0px inset;
+    margin: 20px -20px 0 -20px;
+    background-color: white;
+}
+.place p {
+    font-weight: 400;
+    opacity: 0.8;
+    margin-top: -20px;
+}
+.place button {
+    padding: 5px 30px;
+    background-color: #e80071;
+    font-size: 16px;
+    color: white;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.place button:active {
+    background-color: #c2035f;
+}
+
+/* No Items Section */
+.noitem {
+    margin: auto;
+    text-align: center;
+    width: 300px;
+    line-height: 23px;
+    height: 500px;
+}
+.noitem h1 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.noitem p {
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+.noitem button {
+    padding: 15px 50px;
+    background-color: #e80071;
+    color: white;
+    font-weight: 700;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
     }
-    .noitem h1{
-      font-size: 20px;
-      margin-bottom: 10px;
+    .paymentOptions {
+        flex-direction: column;
     }
-    .noitem p{
-      font-size: 14px;
-      font-weight: 400;
-      margin-bottom: 5px;
+    .creditcard {
+        width: 100%;
+        border-left: none;
+        margin-left: 0;
     }
-.noitem button{
-  padding: 15px 50px 15px 50px;
-  background-color: #e80071;
-  color: white;
-  font-weight: 700;
-  border-radius: 8px;
-  font-size: 15px;
+    .rightcart {
+        width: 100%;
+    }
+    .place {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .details {
+        width: 100%;
+    }
 }
-
-
-`
-
-
-
+`;
