@@ -210,6 +210,8 @@ const DIV = styled.div`
 
     .footer2 {
         padding: 30px;
+        display: grid,
+        grid-template-coloum: repeat(3fr, 1)
     }
 
     .footer2 p {
@@ -228,7 +230,8 @@ const DIV = styled.div`
 
     .footer2 {
         padding: 20px;
-        grid-template-columns: 1fr;
+        display: grid,
+        grid-template-coloum: repeat(2fr, 1)
     }
 
     .footer3 {

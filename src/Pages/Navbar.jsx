@@ -333,6 +333,11 @@ const DIV = styled.div`
     
     }
 
+    .wrapper{
+        display: flex;
+        justify-content: space-between;
+    }
+
     .upperNav a:hover {
         color: black;
     }
@@ -379,7 +384,8 @@ nav{
     color: black;
     background-color: #f4f4f4;
     border: none;
-    padding-right: 5px;
+    width: 300px;
+    padding-right: 15px;
     padding-left:5px;
     font-size: 14px;
    
@@ -424,6 +430,7 @@ nav{
     border-radius: 8px;
     font-size: 14px;
     font-weight: 600;
+    margin-left: 15px;
 }
 
 .inputSection>i{
@@ -696,4 +703,35 @@ li:hover .mega-box{
 //     color: black;
 //     border: 2px solid #e80071;
 // }
+
+
+@media (max-width: 768px) {
+    .navlinks {
+        margin: 0;
+        padding: 0
+    }
+
+    .wrapper{
+        padding-left: 20px;
+        padding-right: 20px
+    }
+
+    .searchDiv{
+         width: 400px
+    }
+}
+
+@media (max-width: 480px) {
+    .navlinks {
+        display: none;
+    }
+
+    .wrapper{
+        margin-top: 0;
+    }
+
+    .navlinks {
+        display: none;
+    }
+}
 `

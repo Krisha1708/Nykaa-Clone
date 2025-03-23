@@ -510,7 +510,7 @@ const DIV = styled.div`
 
     .product {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         gap: 20px;
     }
 
@@ -605,7 +605,7 @@ const DIV = styled.div`
     /* Responsive Adjustments */
     @media (max-width: 768px) {
         .product {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
         }
 
         .add-to-cart button {
@@ -615,7 +615,7 @@ const DIV = styled.div`
 
     @media (max-width: 480px) {
         .product {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
         }
 
         .add-to-cart button {

@@ -28,7 +28,7 @@ export const AllProducts = () => {
   const [hair, setHair] = useState(false)
   const [face, setFace] = useState(false)
   const [makeup, setMakeUp] = useState(false)
-  
+
 
 
 
@@ -38,7 +38,7 @@ export const AllProducts = () => {
 
   const [selectedBrands, setSelectedBrands] = useState([]);
 
-  
+
   const [facePage, setFacePage] = useState(1)
   const itemsPerPage = 24;
 
@@ -52,11 +52,11 @@ export const AllProducts = () => {
   }, [searchParams, sortField, sortOrder])
 
 
-  
 
 
 
- 
+
+
 
 
 
@@ -67,7 +67,7 @@ export const AllProducts = () => {
     setSortOrder(event.target.value);
     setSortField("price")
 
-    
+
   };
 
 
@@ -84,7 +84,7 @@ export const AllProducts = () => {
     } else {
       setSelectedBrands(selectedBrands.filter((brand) => brand !== brandName));
     }
-   
+
     setFacePage(1)
   };
 
@@ -100,165 +100,165 @@ export const AllProducts = () => {
     .slice(indexOfFirstFaceItem, indexOfLastFaceItem);
 
 
-const handleMakeUp = ()=>{
-   setMakeUp(true)
-   setFace(false)
-   setHair(false)
-   dispatch(setUserNavbar(false))
-}
+  const handleMakeUp = () => {
+    setMakeUp(true)
+    setFace(false)
+    setHair(false)
+    dispatch(setUserNavbar(false))
+  }
 
-const handleFace = ()=>{
-  setMakeUp(false)
-  setFace(true)
-  setHair(false)
-  dispatch(setUserNavbar(false))
-}
-const handleHair = ()=>{
-  setMakeUp(false)
-  setFace(false)
-  setHair(true)
-  dispatch(setUserNavbar(false))
-}
+  const handleFace = () => {
+    setMakeUp(false)
+    setFace(true)
+    setHair(false)
+    dispatch(setUserNavbar(false))
+  }
+  const handleHair = () => {
+    setMakeUp(false)
+    setFace(false)
+    setHair(true)
+    dispatch(setUserNavbar(false))
+  }
 
 
   return (
     <DIV>
       <Navbar />
-      
+
       <div id='lowerNav' >
-                    <button onClick={handleMakeUp} >Makeup</button>
-                    <button onClick={handleFace}>Face care</button>
-                    <button onClick={handleHair}>Hair</button>
-                    <button>Appliances</button>
-                    <button>Bath & Body</button>
-                    <button>Natural</button>
-                    <button>Mom & Baby</button>
-                    <button>Health & Wellness</button>
-                    <button>Men</button>
-                    <button>Fragrance</button>
+        <button onClick={handleMakeUp} >Makeup</button>
+        <button onClick={handleFace}>Face care</button>
+        <button onClick={handleHair}>Hair</button>
+        <button>Appliances</button>
+        <button>Bath & Body</button>
+        <button>Natural</button>
+        <button>Mom & Baby</button>
+        <button>Health & Wellness</button>
+        <button>Men</button>
+        <button>Fragrance</button>
       </div>
       {
-        face?<Facecare />:hair? <Hair />:makeup?<Makeup />:
-        <div>
-          <div className='container'>
-        <h1>Choose Whatever You Like</h1>
-        <p>Discover a limitless range of Products</p>
+        face ? <Facecare /> : hair ? <Hair /> : makeup ? <Makeup /> :
+          <div>
+            <div className='container'>
+              <h1>Choose Whatever You Like</h1>
+              <p>Discover a limitless range of Products</p>
 
-      </div>
-      <div className='box'>
-        <div>
-          <div className='category'>
-            <h1>Sort By :</h1>
-            <label>
-              <input
-                type="radio"
-                name="options"
-                value="asc"
-                className='white-checkbox'
-                checked={sortOrder === 'asc'}
-                onChange={handleOptionChange}
-              />
-              Price : Low to High
-            </label>
-            <br />
-            <label>
-              <input
-                type="radio"
-                name="options"
-                value="desc"
-                className='white-checkbox'
-                checked={sortOrder === 'desc'}
-                onChange={handleOptionChange}
-              />
-              Price : High to Low
-            </label>
+            </div>
+            <div className='box'>
+              <div className='sort-filters'>
+                <div className='category'>
+                  <h1>Sort By :</h1>
+                  <label>
+                    <input
+                      type="radio"
+                      name="options"
+                      value="asc"
+                      className='white-checkbox'
+                      checked={sortOrder === 'asc'}
+                      onChange={handleOptionChange}
+                    />
+                    Price : Low to High
+                  </label>
+                  <br />
+                  <label>
+                    <input
+                      type="radio"
+                      name="options"
+                      value="desc"
+                      className='white-checkbox'
+                      checked={sortOrder === 'desc'}
+                      onChange={handleOptionChange}
+                    />
+                    Price : High to Low
+                  </label>
 
-          </div>
-
-
-          <div className='category2'>
-            <h1>Select Any Brand</h1>
-            
-            <label><input className='white-checkbox' type="checkbox" value="mamaearth"
-              onChange={handleBrandCheckboxChange} />Mamaearth</label>
-            <br />
-            
-            <label><input className='white-checkbox' type="checkbox" value="mcaffeine"
-              onChange={handleBrandCheckboxChange} />MCaffeine</label>
-            <br />
-            <label><input className='white-checkbox' type="checkbox" value="biotique"
-              onChange={handleBrandCheckboxChange} />Biotique</label>
-              <br />
-            <label><input className='white-checkbox' type="checkbox" value="wow"
-              onChange={handleBrandCheckboxChange} />WOW</label>
-            <br />
-            <label><input className='white-checkbox' type="checkbox" value="loreal"
-              onChange={handleBrandCheckboxChange} />L'Oreal Paris</label>
-            <br />
-            <label><input className='white-checkbox' type="checkbox" value="dove"
-              onChange={handleBrandCheckboxChange} />Dove</label>
-            <br />
-           
-              <label><input className='white-checkbox' type="checkbox" value="myglamm"
-            onChange={handleBrandCheckboxChange} />MyGlamm</label>
-            <br />
-            <label><input className='white-checkbox' type="checkbox" value="maybelline"
-            onChange={handleBrandCheckboxChange} />Maybelline New York</label>
-            <br />
-            <label><input className='white-checkbox' type="checkbox" value="swissbeauty"
-            onChange={handleBrandCheckboxChange} />Swiss Beauty</label>
-            <br />
-            <label><input className='white-checkbox' type="checkbox" value="mac"
-            onChange={handleBrandCheckboxChange} />M.A.C</label>
-            <br />
-            <label><input className='white-checkbox' type="checkbox" value="lakme"
-            onChange={handleBrandCheckboxChange} />Lakme</label>
-            
-          </div>
-
-        </div>
-
-        <div className="product" >
+                </div>
 
 
+                <div className='category2'>
+                  <h1>Select Any Brand</h1>
 
-          {
-            product
+                  <label><input className='white-checkbox' type="checkbox" value="mamaearth"
+                    onChange={handleBrandCheckboxChange} />Mamaearth</label>
+                  <br />
+
+                  <label><input className='white-checkbox' type="checkbox" value="mcaffeine"
+                    onChange={handleBrandCheckboxChange} />MCaffeine</label>
+                  <br />
+                  <label><input className='white-checkbox' type="checkbox" value="biotique"
+                    onChange={handleBrandCheckboxChange} />Biotique</label>
+                  <br />
+                  <label><input className='white-checkbox' type="checkbox" value="wow"
+                    onChange={handleBrandCheckboxChange} />WOW</label>
+                  <br />
+                  <label><input className='white-checkbox' type="checkbox" value="loreal"
+                    onChange={handleBrandCheckboxChange} />L'Oreal Paris</label>
+                  <br />
+                  <label><input className='white-checkbox' type="checkbox" value="dove"
+                    onChange={handleBrandCheckboxChange} />Dove</label>
+                  <br />
+
+                  <label><input className='white-checkbox' type="checkbox" value="myglamm"
+                    onChange={handleBrandCheckboxChange} />MyGlamm</label>
+                  <br />
+                  <label><input className='white-checkbox' type="checkbox" value="maybelline"
+                    onChange={handleBrandCheckboxChange} />Maybelline New York</label>
+                  <br />
+                  <label><input className='white-checkbox' type="checkbox" value="swissbeauty"
+                    onChange={handleBrandCheckboxChange} />Swiss Beauty</label>
+                  <br />
+                  <label><input className='white-checkbox' type="checkbox" value="mac"
+                    onChange={handleBrandCheckboxChange} />M.A.C</label>
+                  <br />
+                  <label><input className='white-checkbox' type="checkbox" value="lakme"
+                    onChange={handleBrandCheckboxChange} />Lakme</label>
+
+                </div>
+
+              </div>
+
+              <div className="product" >
+
+
+
+                {
+                  product
                     .filter((item) => selectedBrands.length === 0 || selectedBrands.includes(item.brand))
                     .map((el) => <ProductCard key={el._id} {...el} />)
                     .slice(indexOfFirstFaceItem, indexOfLastFaceItem)
-          }
+                }
 
 
 
 
-        </div>
+              </div>
 
-      </div>
-
-      
+            </div>
 
 
 
-      
-        <div className="pagination">
-          <button onClick={() => setFacePage(facePage - 1)} disabled={facePage === 1}>
-            <FontAwesomeIcon icon={faChevronLeft} />
-          </button>
-          <span>{facePage}</span>
-          <button
-            onClick={() => setFacePage(facePage + 1)}
-            disabled={currentFaceItems.length < itemsPerPage}
-          >
-            <FontAwesomeIcon icon={faChevronRight} />
-          </button>
-        </div>
-      
-        </div>
 
-        
+
+
+            <div className="pagination">
+              <button onClick={() => setFacePage(facePage - 1)} disabled={facePage === 1}>
+                <FontAwesomeIcon icon={faChevronLeft} />
+              </button>
+              <span>{facePage}</span>
+              <button
+                onClick={() => setFacePage(facePage + 1)}
+                disabled={currentFaceItems.length < itemsPerPage}
+              >
+                <FontAwesomeIcon icon={faChevronRight} />
+              </button>
+            </div>
+
+          </div>
+
+
       }
-      
+
       <Footer />
     </DIV>
   )
@@ -355,38 +355,50 @@ const DIV = styled.div`
 
     .box {
         display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: flex-start;
+        gap: 2px;
+        justify-content: space-around;
     }
 
     .product {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2px;
     }
 
     @media (max-width: 1024px) {
+        .box{
+            display; flex;
+            gap; 20px;
+        }
         .product {
-            grid-template-columns: repeat(2, 1fr);
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
         }
     }
 
     @media (max-width: 768px) {
         .product {
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
+            dislay: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
         }
 
         .category, .category2 {
             margin-left: 20px;
             width: 90%;
         }
+
+        .box{
+            display; flex;
+            gap; 15px;
+          }
     }
 
     @media (max-width: 480px) {
         .product {
-            grid-template-columns: 1fr;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 10px;
         }
 
@@ -398,6 +410,11 @@ const DIV = styled.div`
         .container h1 {
             font-size: 24px;
         }
+
+        .box{
+            display; flex;
+            gap; 10px;
+        }    
     }
 
     .pagination {

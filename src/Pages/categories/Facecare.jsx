@@ -398,7 +398,7 @@ const DIV = styled.div`
         justify-content: left;
         gap: 20px;
         padding-top: 20px;
-        padding-left: 20px;
+        padding-left: 30px;
     }
 
     .Facecare img {
@@ -471,8 +471,8 @@ const DIV = styled.div`
 
     .product {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 2px;
     }
 
     .product-card {
@@ -548,7 +548,7 @@ const DIV = styled.div`
     /* Responsive Adjustments */
     @media (max-width: 768px) {
         .product {
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
         }
 
         .addtocart {
@@ -562,7 +562,7 @@ const DIV = styled.div`
 
     @media (max-width: 480px) {
         .product {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
         }
 
         .addtocart button {

@@ -401,7 +401,6 @@ const DIV = styled.div`
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    flex-wrap: wrap;
   }
 
   .savedinfo {

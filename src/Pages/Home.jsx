@@ -553,6 +553,7 @@ const DIV = styled.div`
         .focus2 img {
             width: 150px;
         }
+
     }
 
     @media (max-width: 480px) {
@@ -560,10 +561,11 @@ const DIV = styled.div`
         .topBrands2,
         .topBrands4,
         .topBrands5 {
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(2, 1fr);
         }
         .focus2 {
-            flex-direction: column;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
         }
         .focus2 img {
             width: 100%;

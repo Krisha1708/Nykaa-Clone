@@ -28,26 +28,26 @@ export const ProductList = () => {
 const DIV = styled.div`
   .product {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 20px;
   }
 
   @media (max-width: 1024px) {
     .product {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
   @media (max-width: 768px) {
     .product {
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 15px;
     }
   }
 
   @media (max-width: 480px) {
     .product {
-      grid-template-columns: 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
   }
