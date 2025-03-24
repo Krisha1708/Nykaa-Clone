@@ -380,7 +380,7 @@ const DIV = styled.div`
     }
 
     .bodyContainer{
-        margin-top: 20px;
+        margin-top: 40px;
     }
     .slide {
         padding: 13px;
@@ -545,6 +545,10 @@ const DIV = styled.div`
     @media (max-width: 1024px) {
         .topBrands2 {
             grid-template-columns: repeat(3, 1fr);
+        }
+
+        .slide img{
+            padding-left: 30px;
         }
         .topBrands4 {
             grid-template-columns: repeat(3, 1fr);

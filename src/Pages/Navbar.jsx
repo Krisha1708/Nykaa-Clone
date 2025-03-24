@@ -382,7 +382,7 @@ const DIV = styled.div`
     .inputSection {
         display: flex;
         font-size: 14px;
-        gap: 20px;
+        gap: 10px;
         align-items: center;
         font-weight: 600;
     }
@@ -397,7 +397,7 @@ const DIV = styled.div`
     }
 
     .inputSection > i {
-        font-size: 26px;
+        font-size: 22px;
         opacity: 0.8;
     }
 
@@ -659,6 +659,35 @@ li:hover .mega-box{
     }
 }
 
+/* Additional specificity for <ul> inside .navlinks */
+.navlinks ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Hide <li> specifically */
+@media (max-width: 1086px) {
+    .navlinks ul li {
+        display: none !important;
+    }
+
+    .inputSection{
+        flex: left;
+        gap: 5px;
+    }
+
+    .search{
+        width: 300px;
+    }
+
+    .signIn, logout{
+        padding: 0.5px, 4px;
+        width: 80px;
+        font-size: 12px;
+    }
+}
+
 @media (max-width: 680px) {
 
     position: sticky;
@@ -680,7 +709,7 @@ li:hover .mega-box{
     .wrapper {
         position: sticky;
         width: auto;
-        height: 80px;
+        height: 120px;
         align-items: center;
         margin-top: 0;
         margin-bottom: 25px;
@@ -726,7 +755,11 @@ li:hover .mega-box{
 
     .signDiv{
         width: auto;
-        max-width: 150px;
+        max-width: 70px;
+    }
+
+    .search{
+        width:120px;
     }
 
 
@@ -738,33 +771,6 @@ li:hover .mega-box{
     }
 }
 
-/* Additional specificity for <ul> inside .navlinks */
-.navlinks ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
 
-/* Hide <li> specifically */
-@media (max-width: 1086px) {
-    .navlinks ul li {
-        display: none !important;
-    }
-
-    .inputSection{
-        flex: left;
-        gap: 5px;
-    }
-
-    .search{
-        width: 300px;
-    }
-
-    .signIn, logout{
-        padding: 0.5px, 4px;
-        width: 80px;
-        font-size: 12px;
-    }
-}
 
 `;
