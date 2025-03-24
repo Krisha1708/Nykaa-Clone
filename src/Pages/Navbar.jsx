@@ -368,7 +368,7 @@ const DIV = styled.div`
     }
 
     .searchDiv i {
-        font-size: 26px;
+        font-size: 18px;
         text-align: center;
         opacity: 0.5;
         margin-left: 5px;
@@ -583,7 +583,6 @@ const DIV = styled.div`
     .wrapper {
         position: sticky;
         width: auto;
-        padding: 10px 30px;
         height: 120px;
         align-items: center;
         margin-top: 0;
@@ -598,7 +597,6 @@ const DIV = styled.div`
         max-width: 180px;
         position: sticky;
         top: 40px; /* Provide margin from logo */
-        background: white;
     }
 
     .mega-box,
@@ -617,6 +615,19 @@ const DIV = styled.div`
     .wrapper{
         flex-direction: column;
     }
+
+    .inputSection{
+        flex: left;
+        gap: 5px;
+    }
+
+    .signIn{
+        padding: 0.5px, 4px;
+        width: 80px;
+        font-size: 12px;
+    }
+
+
 }
 
 /* Additional specificity for <ul> inside .navlinks */
