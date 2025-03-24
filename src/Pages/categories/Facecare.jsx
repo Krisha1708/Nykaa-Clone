@@ -19,81 +19,81 @@ import { Footer } from '../Footer'
 import { Navbar } from '../Navbar'
 
 export const Facecare = () => {
-    const [searchParams] = useSearchParams()
-    const dispatch = useDispatch()
-    const [faceItems, setFaceItems] = useState([])
-    const product = useSelector(store => store.productReducer.product)
-   
-    const [showFacewash, setFacewash] = useState([])
-    const [showMosturizer, setMosturizer] = useState([])
-    const [showSerum, setSerum] = useState([])
+  const [searchParams] = useSearchParams()
+  const dispatch = useDispatch()
+  const [faceItems, setFaceItems] = useState([])
+  const product = useSelector(store => store.productReducer.product)
 
-    const [isFacewash, setIsFacewash] = useState(false)
-    const [isMosturizer, setIsMosturizer] = useState(false)
-    const [isSerum, setIsSerum] = useState(false)
+  const [showFacewash, setFacewash] = useState([])
+  const [showMosturizer, setMosturizer] = useState([])
+  const [showSerum, setSerum] = useState([])
 
-    const [sortField, setSortField] = useState("")
-    const [sortOrder, setSortOrder] = useState("")
-    const [isChecked, setIsChecked] = useState(false)
+  const [isFacewash, setIsFacewash] = useState(false)
+  const [isMosturizer, setIsMosturizer] = useState(false)
+  const [isSerum, setIsSerum] = useState(false)
 
-    const [selectedBrands, setSelectedBrands] = useState([]);
-    const navbar = useSelector(store => store.authReducer.navbar)
+  const [sortField, setSortField] = useState("")
+  const [sortOrder, setSortOrder] = useState("")
+  const [isChecked, setIsChecked] = useState(false)
 
-
-    const [facewashPage, setFacewashPage] = useState(1);
-const [mosturizerPage, setMosturizerPage] = useState(1);
-const [serumPage, setSerumPage] = useState(1);
-const [facePage, setFacePage] = useState(1)
-const itemsPerPage = 9;
+  const [selectedBrands, setSelectedBrands] = useState([]);
+  const navbar = useSelector(store => store.authReducer.navbar)
 
 
-    
-    useEffect(() => {
-        dispatch(getProduct(sortField,sortOrder))
-       
-        
-        
-      }, [searchParams,sortField,sortOrder])
+  const [facewashPage, setFacewashPage] = useState(1);
+  const [mosturizerPage, setMosturizerPage] = useState(1);
+  const [serumPage, setSerumPage] = useState(1);
+  const [facePage, setFacePage] = useState(1)
+  const itemsPerPage = 9;
 
 
-      useEffect(() => {
-       
-         
-         const filteredFaceItems = product?.filter(item => item.category === 'face');
-         setFaceItems(filteredFaceItems);
-        
-        
-      }, [product]);
+
+  useEffect(() => {
+    dispatch(getProduct(sortField, sortOrder))
 
 
-      const handleFacewash = ()=>{
-        
-    
-         
-        const filteredFacewashItems = faceItems?.filter(item => item.type === 'facewash');
-        
-        setFacewash(filteredFacewashItems);
-        setIsFacewash(true)
-        setIsMosturizer(false)
-        setIsSerum(false)
 
-        setFacewashPage(1)
-        setMosturizerPage(1)
-        setSerumPage(1)
-        setFacePage(1)
-       
-        
-        
-       
-       
-     
+  }, [searchParams, sortField, sortOrder])
+
+
+  useEffect(() => {
+
+
+    const filteredFaceItems = product?.filter(item => item.category === 'face');
+    setFaceItems(filteredFaceItems);
+
+
+  }, [product]);
+
+
+  const handleFacewash = () => {
+
+
+
+    const filteredFacewashItems = faceItems?.filter(item => item.type === 'facewash');
+
+    setFacewash(filteredFacewashItems);
+    setIsFacewash(true)
+    setIsMosturizer(false)
+    setIsSerum(false)
+
+    setFacewashPage(1)
+    setMosturizerPage(1)
+    setSerumPage(1)
+    setFacePage(1)
+
+
+
+
+
+
   }
-  const handleMosturizer= ()=>{
-    
+  const handleMosturizer = () => {
 
-     
+
+
     const filteredMosturizerItems = faceItems?.filter(item => item.type === 'mosturizer');
-    
+
     setMosturizer(filteredMosturizerItems);
     setIsFacewash(false)
     setIsMosturizer(true)
@@ -103,75 +103,75 @@ const itemsPerPage = 9;
     setMosturizerPage(1)
     setSerumPage(1)
     setFacePage(1)
-    
-    
-    
-   
-   
- 
-}
-const handleSerum = ()=>{
-    
-
-     
-const filteredSerumItems = faceItems?.filter(item => item.type === 'serum');
-
-setSerum(filteredSerumItems);
-setIsFacewash(false)
-setIsMosturizer(false)
-setIsSerum(true)
-
-setFacewashPage(1)
-setMosturizerPage(1)
-setSerumPage(1)
-setFacePage(1)
 
 
 
 
 
 
-
-
-}
-
+  }
+  const handleSerum = () => {
 
 
 
-const handleOptionChange = (event) => {
+    const filteredSerumItems = faceItems?.filter(item => item.type === 'serum');
+
+    setSerum(filteredSerumItems);
+    setIsFacewash(false)
+    setIsMosturizer(false)
+    setIsSerum(true)
+
+    setFacewashPage(1)
+    setMosturizerPage(1)
+    setSerumPage(1)
+    setFacePage(1)
 
 
-setSortOrder(event.target.value);
-setSortField("price")
 
-// if(sortField=="price"&&sortOrder=='asc'||'desc'&&isShampoo===true){
-    
-        
-// }
 
-};
 
-useEffect(()=>{
+
+
+
+  }
+
+
+
+
+  const handleOptionChange = (event) => {
+
+
+    setSortOrder(event.target.value);
+    setSortField("price")
+
+    // if(sortField=="price"&&sortOrder=='asc'||'desc'&&isShampoo===true){
+
+
+    // }
+
+  };
+
+  useEffect(() => {
     const filteredFacewashItems = faceItems?.filter(item => item.type === 'facewash');
-        
+
     setFacewash(filteredFacewashItems);
 
     const filteredMosturizerItems = faceItems?.filter(item => item.type === 'mosturizer');
-    
+
     setMosturizer(filteredMosturizerItems);
 
     const filteredSerumItems = faceItems?.filter(item => item.type === 'serum');
 
     setSerum(filteredSerumItems);
 
-},[product,faceItems])
+  }, [product, faceItems])
 
 
 
 
-   //...........................
+  //...........................
 
-   const handleBrandCheckboxChange = (event) => {
+  const handleBrandCheckboxChange = (event) => {
     const brandName = event.target.value;
     if (event.target.checked) {
       setSelectedBrands([...selectedBrands, brandName]);
@@ -179,9 +179,9 @@ useEffect(()=>{
       setSelectedBrands(selectedBrands.filter((brand) => brand !== brandName));
     }
     setFacewashPage(1)
-       setMosturizerPage(1)
-       setSerumPage(1)
-       setFacePage(1)
+    setMosturizerPage(1)
+    setSerumPage(1)
+    setFacePage(1)
   };
 
 
@@ -194,200 +194,201 @@ useEffect(()=>{
   const currentFacewashItems = showFacewash
     .filter((item) => selectedBrands.length === 0 || selectedBrands.includes(item.brand))
     .slice(indexOfFirstFacewashItem, indexOfLastFacewashItem);
-  
+
   const indexOfLastMosturizerItem = mosturizerPage * itemsPerPage;
   const indexOfFirstMosturizerItem = indexOfLastMosturizerItem - itemsPerPage;
   const currentMosturizerItems = showMosturizer
     .filter((item) => selectedBrands.length === 0 || selectedBrands.includes(item.brand))
     .slice(indexOfFirstMosturizerItem, indexOfLastMosturizerItem);
-  
+
   const indexOfLastSerumItem = serumPage * itemsPerPage;
   const indexOfFirstSerumItem = indexOfLastSerumItem - itemsPerPage;
   const currentSerumItems = showSerum
     .filter((item) => selectedBrands.length === 0 || selectedBrands.includes(item.brand))
     .slice(indexOfFirstSerumItem, indexOfLastSerumItem);
-  
-    const indexOfLastFaceItem = facePage * itemsPerPage;
+
+  const indexOfLastFaceItem = facePage * itemsPerPage;
   const indexOfFirstFaceItem = indexOfLastFaceItem - itemsPerPage;
   const currentFaceItems = faceItems
     .filter((item) => selectedBrands.length === 0 || selectedBrands.includes(item.brand))
     .slice(indexOfFirstFaceItem, indexOfLastFaceItem);
-  
 
 
-      
 
-      
+
+
+
   return (
     <DIV>
       {
         navbar && <Navbar />
       }
-        <div className='container'>
-            <h1>The Skincare Store</h1>
-            <p>Discover a limitless range of skincare</p>
-            <div className='Facecare'>
-                <img onClick={handleFacewash} src={facewash} alt="" />
-                <img onClick={handleMosturizer} src={facecream} alt="" />
-                <img onClick={handleSerum} src={faceserum} alt="" />
-            </div>
+      <div className='container'>
+        <h1>The Skincare Store</h1>
+        <p>Discover a limitless range of skincare</p>
+        <div className='Facecare'>
+          <img onClick={handleFacewash} src={facewash} alt="" />
+          <img onClick={handleMosturizer} src={facecream} alt="" />
+          <img onClick={handleSerum} src={faceserum} alt="" />
         </div>
-        <div className='box'>
-            <div>
-         <div className='category'>
+      </div>
+      <div className='box'>
+        <div>
+          <div className='category'>
             <h1>Sort By :</h1>
             <label>
-        <input
-          type="radio"
-          name="options"
-          value="asc"
-          className='white-checkbox'
-          checked={sortOrder === 'asc'}
-          onChange={handleOptionChange}
-        />
-        Price : Low to High
-      </label>
+              <input
+                type="radio"
+                name="options"
+                value="asc"
+                className='white-checkbox'
+                checked={sortOrder === 'asc'}
+                onChange={handleOptionChange}
+              />
+              Price : Low to High
+            </label>
             <br />
             <label>
-        <input
-          type="radio"
-          name="options"
-          value="desc"
-          className='white-checkbox'
-          checked={sortOrder === 'desc'}
-          onChange={handleOptionChange}
-        />
-        Price : High to Low
-      </label>
-           
+              <input
+                type="radio"
+                name="options"
+                value="desc"
+                className='white-checkbox'
+                checked={sortOrder === 'desc'}
+                onChange={handleOptionChange}
+              />
+              Price : High to Low
+            </label>
+
           </div>
 
 
-          <div className='category'>
+          <div className='category2'>
             <h1>Select Any Brand</h1>
             <label><input className='white-checkbox' type="checkbox" value="mamaearth"
-            onChange={handleBrandCheckboxChange} />Mamaearth</label>
+              onChange={handleBrandCheckboxChange} />Mamaearth</label>
             <br />
             <label><input className='white-checkbox' type="checkbox" value="wow"
-            onChange={handleBrandCheckboxChange} />WOW</label>
+              onChange={handleBrandCheckboxChange} />WOW</label>
             <br />
             <label><input className='white-checkbox' type="checkbox" value="mcaffeine"
-            onChange={handleBrandCheckboxChange} />MCaffeine</label>
+              onChange={handleBrandCheckboxChange} />MCaffeine</label>
             <br />
             <label><input className='white-checkbox' type="checkbox" value="biotique"
-            onChange={handleBrandCheckboxChange} />Biotique</label>
-          </div>
-           
+              onChange={handleBrandCheckboxChange} />Biotique</label>
           </div>
 
-          <div className="product" >
-         
-          
+        </div>
+
+        <div className="product" >
+
+
 
           {
-            isFacewash?
-            showFacewash
-            .filter((item) => selectedBrands.length === 0 || selectedBrands.includes(item.brand))
-            .map((el) => <ProductCard key={el._id} {...el} />)
-            .slice(indexOfFirstFacewashItem, indexOfLastFacewashItem)
-    
-            : isMosturizer? showMosturizer
-            .filter((item) => selectedBrands.length === 0 || selectedBrands.includes(item.brand))
-            .map((el) => <ProductCard key={el._id} {...el} />)
-            .slice(indexOfFirstMosturizerItem, indexOfLastMosturizerItem)
-    
-            :isSerum? showSerum
-            .filter((item) => selectedBrands.length === 0 || selectedBrands.includes(item.brand))
-            .map((el) => <ProductCard key={el._id} {...el} />)
-            .slice(indexOfFirstSerumItem, indexOfLastSerumItem)
-            : faceItems
-            .filter((item) => selectedBrands.length === 0 || selectedBrands.includes(item.brand))
-            .map((el) => <ProductCard key={el._id} {...el} />)
-            .slice(indexOfFirstFaceItem, indexOfLastFaceItem)
-            }
+            isFacewash ?
+              showFacewash
+                .filter((item) => selectedBrands.length === 0 || selectedBrands.includes(item.brand))
+                .map((el) => <ProductCard key={el._id} {...el} />)
+                .slice(indexOfFirstFacewashItem, indexOfLastFacewashItem)
+
+              : isMosturizer ? showMosturizer
+                .filter((item) => selectedBrands.length === 0 || selectedBrands.includes(item.brand))
+                .map((el) => <ProductCard key={el._id} {...el} />)
+                .slice(indexOfFirstMosturizerItem, indexOfLastMosturizerItem)
+
+                : isSerum ? showSerum
+                  .filter((item) => selectedBrands.length === 0 || selectedBrands.includes(item.brand))
+                  .map((el) => <ProductCard key={el._id} {...el} />)
+                  .slice(indexOfFirstSerumItem, indexOfLastSerumItem)
+                  : faceItems
+                    .filter((item) => selectedBrands.length === 0 || selectedBrands.includes(item.brand))
+                    .map((el) => <ProductCard key={el._id} {...el} />)
+                    .slice(indexOfFirstFaceItem, indexOfLastFaceItem)
+          }
 
 
 
-         
-        </div>
-           
+
         </div>
 
-        {
-                isFacewash && <div className="pagination">
-                <button onClick={() => setFacewashPage(facewashPage - 1)} disabled={facewashPage === 1}>
-                <FontAwesomeIcon icon={faChevronLeft} />
-                </button>
-                <span>{facewashPage}</span>
-                <button
-                  onClick={() => setFacewashPage(facewashPage + 1)}
-                  disabled={currentFacewashItems.length < itemsPerPage}
-                >
-                  <FontAwesomeIcon icon={faChevronRight} />
-                </button>
-              </div>
-            }
+      </div>
 
-            {
-                isMosturizer && <div className="pagination">
-                <button onClick={() => setMosturizerPage(mosturizerPage - 1)} disabled={mosturizerPage === 1}>
-                <FontAwesomeIcon icon={faChevronLeft} />
-                </button>
-                <span>{mosturizerPage}</span>
-                <button
-                  onClick={() => setMosturizerPage(mosturizerPage + 1)}
-                  disabled={currentMosturizerItems.length < itemsPerPage}
-                >
-                  <FontAwesomeIcon icon={faChevronRight} />
-                </button>
-              </div>
-            }
+      {
+        isFacewash && <div className="pagination">
+          <button onClick={() => setFacewashPage(facewashPage - 1)} disabled={facewashPage === 1}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
+          <span>{facewashPage}</span>
+          <button
+            onClick={() => setFacewashPage(facewashPage + 1)}
+            disabled={currentFacewashItems.length < itemsPerPage}
+          >
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
+        </div>
+      }
 
-
-            {
-                isSerum && <div className="pagination">
-                <button onClick={() => setSerumPage(serumPage - 1)} disabled={serumPage === 1}>
-                <FontAwesomeIcon icon={faChevronLeft} />
-                </button>
-                <span>{serumPage}</span>
-                <button
-                  onClick={() => setSerumPage(serumPage + 1)}
-                  disabled={currentSerumItems.length < itemsPerPage}
-                >
-                  <FontAwesomeIcon icon={faChevronRight} />
-                </button>
-              </div>
-            }
+      {
+        isMosturizer && <div className="pagination">
+          <button onClick={() => setMosturizerPage(mosturizerPage - 1)} disabled={mosturizerPage === 1}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
+          <span>{mosturizerPage}</span>
+          <button
+            onClick={() => setMosturizerPage(mosturizerPage + 1)}
+            disabled={currentMosturizerItems.length < itemsPerPage}
+          >
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
+        </div>
+      }
 
 
+      {
+        isSerum && <div className="pagination">
+          <button onClick={() => setSerumPage(serumPage - 1)} disabled={serumPage === 1}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
+          <span>{serumPage}</span>
+          <button
+            onClick={() => setSerumPage(serumPage + 1)}
+            disabled={currentSerumItems.length < itemsPerPage}
+          >
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
+        </div>
+      }
 
 
 
-            {
-                !isFacewash && !isMosturizer && !isSerum && <div className="pagination">
-                <button onClick={() => setFacePage(facePage - 1)} disabled={facePage === 1}>
-                <FontAwesomeIcon icon={faChevronLeft} />
-                </button>
-                <span>{facePage}</span>
-                <button
-                onClick={() => setFacePage(facePage + 1)}
-                disabled={currentFaceItems.length < itemsPerPage}
-                >
-                <FontAwesomeIcon icon={faChevronRight} />
-                </button>
-            </div>
-            }
+
+
+      {
+        !isFacewash && !isMosturizer && !isSerum && <div className="pagination">
+          <button onClick={() => setFacePage(facePage - 1)} disabled={facePage === 1}>
+            <FontAwesomeIcon icon={faChevronLeft} />
+          </button>
+          <span>{facePage}</span>
+          <button
+            onClick={() => setFacePage(facePage + 1)}
+            disabled={currentFaceItems.length < itemsPerPage}
+          >
+            <FontAwesomeIcon icon={faChevronRight} />
+          </button>
+        </div>
+      }
 
       {
         navbar && <Footer />
       }
-  
+
     </DIV>
   )
 }
 
+
 const DIV = styled.div`
-  
+
     .container {
         padding: 40px;
         width: 100%;
@@ -398,7 +399,8 @@ const DIV = styled.div`
         justify-content: left;
         gap: 20px;
         padding-top: 20px;
-        padding-left: 30px;
+        padding-left: 20px;
+        flex-wrap: wrap;
     }
 
     .Facecare img {
@@ -422,27 +424,35 @@ const DIV = styled.div`
         opacity: 0.6;
     }
 
-    .category {
+    .category, .category2 {
         box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-        margin: 20px;
         width: 300px;
-        height: 200px;
-        align-items: center;
-        text-align: center;
         padding: 10px;
-        margin-left: 60px;
+        margin: 20px 20px 20px 60px;
         position: relative;
         text-align: left;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .category {
+        height: 150px;
+    }
+
+    .category2 {
+        height: 320px;
     }
 
     label {
         text-align: left;
     }
 
-    .category h1 {
+    .category h1, .category2 h1 {
         font-size: 17px;
         text-align: center;
         padding: 10px;
+        font-weight: 600;
+        opacity: 0.9;
     }
 
     .white-checkbox {
@@ -458,6 +468,7 @@ const DIV = styled.div`
         cursor: pointer;
         right: 10px;
         margin-top: 3px;
+        transition: background-color 0.3s ease;
     }
 
     .white-checkbox:checked {
@@ -467,61 +478,75 @@ const DIV = styled.div`
 
     .box {
         display: flex;
+        gap: 2px;
+        justify-content: space-around;
     }
 
     .product {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 2px;
     }
 
-    .product-card {
-        position: relative;
-        background-color: #fff;
-        border-radius: 8px;
-        padding: 20px;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    @media (max-width: 1344px) {
+        .box{
+            display; flex;
+            gap; 20px;
+        }
+        .product {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
     }
 
-    .addtocart {
-        position: absolute;
-        bottom: 10px;
-        left: 10px;
-        right: 10px;
-        z-index: 2;
-        padding: 10px;
+    @media (max-width: 754px) {
+        .product {
+            dislay: grid;
+            grid-template-columns: repeat(1, 1fr);
+            gap: 10px;
+        }
+
+        .category, .category2 {
+            margin-left: 20px;
+            width: 90%;
+        }
+
+        .box{
+            display; flex;
+            gap: 15px;
+          }
     }
 
-    .addtocart button {
-        background-color: #e80071;
-        padding: 12px 0;
-        color: white;
-        font-weight: 600;
-        width: 100%;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s, transform 0.2s ease;
-        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
-    }
+    @media (max-width: 480px) {
+        .product {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+        }
 
-    .addtocart button:hover {
-        background-color: #a10450;
-        transform: scale(1.05);
-    }
+        .category, .category2 {
+            margin-left: 0;
+            width: 100%;
+        }
 
-    .addtocart button:active {
-        transform: scale(0.95);
+        .container h1 {
+            font-size: 24px;
+        }
+
+        .box{
+            display; flex;
+            gap; 10px;
+        }    
     }
 
     .pagination {
         text-align: center;
         padding: 50px;
-        margin-left: 360px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
     }
 
     .pagination button {
@@ -533,6 +558,13 @@ const DIV = styled.div`
         font-size: 20px;
         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
         border-radius: 50%;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+
+    .pagination button:hover {
+        transform: scale(1.1);
     }
 
     .pagination span {
@@ -542,32 +574,26 @@ const DIV = styled.div`
         font-weight: 600;
         font-size: 17px;
         border-radius: 50%;
-        margin: 0px 10px 0px 10px;
+        margin: 0px 10px;
     }
 
-    /* Responsive Adjustments */
-    @media (max-width: 768px) {
-        .product {
-            grid-template-columns: repeat(3, 1fr);
-        }
-
-        .addtocart {
-            padding: 5px;
-        }
-
-        .addtocart button {
-            padding: 10px;
-        }
+    #lowerNav button {
+        color: #72717f;
+        font-size: 14px;
+        margin-right: 50px;
+        background: none;
+        border: none;
+        cursor: pointer;
     }
 
-    @media (max-width: 480px) {
-        .product {
-            grid-template-columns: repeat(2, 1fr);
-        }
+    #lowerNav button:hover {
+        color: #fc2779;
+    }
 
-        .addtocart button {
-            padding: 8px;
-            font-size: 14px;
-        }
+    #lowerNav {
+        text-align: center;
+        background-color: white;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
     }
 `;

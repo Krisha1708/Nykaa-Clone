@@ -361,26 +361,26 @@ const DIV = styled.div`
 
     .product {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(3, 1fr);
         gap: 2px;
     }
 
-    @media (max-width: 1024px) {
+    @media (max-width: 1234px) {
         .box{
             display; flex;
             gap; 20px;
         }
         .product {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 10px;
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 954px) {
         .product {
             dislay: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 10px;
         }
 
@@ -391,14 +391,18 @@ const DIV = styled.div`
 
         .box{
             display; flex;
-            gap; 15px;
+            gap: 15px;
           }
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 780px) {
+
+        #lowerNav{
+            display: none !important;
+        }
         .product {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 1fr;
             gap: 10px;
         }
 

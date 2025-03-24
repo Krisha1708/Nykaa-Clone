@@ -303,7 +303,7 @@ const DIV = styled.div`
     .upperNav a {
         margin-right: 15px;
         border: none;
-        font-size: 16px;
+        font-size: 12px;
         background-color: transparent;
         padding: 5px;
         text-decoration: none;
@@ -316,7 +316,7 @@ const DIV = styled.div`
     }
 
     .upperNav p {
-        font-size: 16px;
+        font-size: 14px;
         font-weight: 600;
         color: black;
     }
@@ -634,7 +634,13 @@ li:hover .mega-box{
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 836px) {
+        .uprnavbtn{
+            display: none !important;
+        }
+    }
+
+    @media (max-width: 786px) {
     .navlinks {
         display: none !important;
     }
@@ -662,7 +668,7 @@ li:hover .mega-box{
         display: none !important;
     }
 
-    .upperNav {
+    .uprnavbtn {
         display: none !important;
     }
 
@@ -674,7 +680,7 @@ li:hover .mega-box{
     .wrapper {
         position: sticky;
         width: auto;
-        height: 120px;
+        height: 80px;
         align-items: center;
         margin-top: 0;
         margin-bottom: 25px;
@@ -685,9 +691,9 @@ li:hover .mega-box{
 
     .searchDiv {
         width: auto;
-        max-width: 180px;
+        max-width: 210px;
         position: sticky;
-        top: 40px; /* Provide margin from logo */
+        top: 20px; /* Provide margin from logo */
     }
 
     .mega-box,
@@ -718,7 +724,18 @@ li:hover .mega-box{
         font-size: 12px;
     }
 
+    .signDiv{
+        width: auto;
+        max-width: 150px;
+    }
 
+
+}
+
+@media (max-width: 368px){
+    .upperNav{
+         display: none !important;
+    }
 }
 
 /* Additional specificity for <ul> inside .navlinks */
@@ -729,9 +746,24 @@ li:hover .mega-box{
 }
 
 /* Hide <li> specifically */
-@media (max-width: 1038px) {
+@media (max-width: 1086px) {
     .navlinks ul li {
         display: none !important;
+    }
+
+    .inputSection{
+        flex: left;
+        gap: 5px;
+    }
+
+    .search{
+        width: 300px;
+    }
+
+    .signIn, logout{
+        padding: 0.5px, 4px;
+        width: 80px;
+        font-size: 12px;
     }
 }
 

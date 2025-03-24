@@ -49,7 +49,7 @@ export const ProductCard = ({_id,image,name,price,brand,category,type}) => {
 const DIV = styled.div`
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-radius: 5px;
-  width: 300px;
+  width: 250px;
   height: 493px;
   padding: 20px;
   text-align: center;
@@ -83,6 +83,7 @@ const DIV = styled.div`
     right: 10px;
     z-index: 2;
     padding: 10px;
+    margin-top: 10px;
   }
 
   .addtocart button,
@@ -118,7 +119,7 @@ const DIV = styled.div`
     padding-bottom: 60px; /* To avoid overlap with button */
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 954px) {
     width: 90%;
     height: auto;
 
@@ -134,8 +135,9 @@ const DIV = styled.div`
     }
   }
 
-  @media (max-width: 480px) {
-    width: 100%;
+  @media (max-width: 780px) {
+    width: 220px;
+    height: 500px;
     padding: 10px;
 
     .addtocart button,
