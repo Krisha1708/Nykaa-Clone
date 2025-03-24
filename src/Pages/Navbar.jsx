@@ -260,7 +260,6 @@ export const Navbar = () => {
 
 
                 </div>
-                <hr className='hr' />
             </nav>
 
 
@@ -276,462 +275,362 @@ export const Navbar = () => {
 
 const DIV = styled.div`
 
-
-
-
     position: sticky;
     top: 0;
     z-index: 1000;
-    /* overflow: hidden; */
 
-       
-        
 
-        
- 
-    .hr{
+    .hr {
         border: 0.1px solid #ece6e6;
         opacity: 0.8;
         margin-top: -2px;
-       
-        
-       
-    }
-    
-
-
-  .upperNav{
-    display: flex;
-    justify-content: space-around;
-    // border: 2px solid red; 
-    align-items: center;
-    /* text-align: center; */
-    /* align-content: center; */
-    height: 40px;
-    background: rgb(216, 124, 139);
-    background: linear-gradient(90deg,  rgb(216, 124, 139));
-    position: sticky;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    
-	  
-  }
-
-
-  .upperNav a {
-    margin-right: 15px;
-    border: none;
-    font-size: 16px;
-    background-color: transparent;
-    padding: 5px;
-    text-align: center;
-    text-decoration: none;
-    color: black;
-
-    
-    
     }
 
-    .wrapper{
+    .upperNav {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        align-items: center;
+        height: 40px;
+        background: rgb(216, 124, 139);
+        background: linear-gradient(90deg, rgb(216, 124, 139));
+        position: sticky;
+        top: 0;
+        left: 0;
+        z-index: 100;
     }
 
-    .upperNav a:hover {
+    .upperNav a {
+        margin-right: 15px;
+        border: none;
+        font-size: 16px;
+        background-color: transparent;
+        padding: 5px;
+        text-decoration: none;
         color: black;
     }
+
+    .upperNav a:hover,
     .upperNav p:hover {
         color: black;
     }
- 
-    .upperNav p{
+
+    .upperNav p {
         font-size: 16px;
         font-weight: 600;
         color: black;
-        
     }
 
     .animated-text {
-  animation: fadeInOut 3s infinite;
-  opacity: 0;
-}
-
-@keyframes fadeInOut {
-  0%, 100% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.8;
-  }
-}
-// main navbar styling
-  
-
-nav{
-    background-color: #fff;
-    /* position: fixed; */
-    width: 100%;
-    z-index: 999;
-    height: 65px;
-    line-height: 40px;
-   
-    
-}
-
-
-.search{
-    color: black;
-    background-color: #f4f4f4;
-    border: none;
-    width: 300px;
-    padding-right: 15px;
-    padding-left:5px;
-    font-size: 14px;
-   
-    
-}
-.search:focus{
-    outline: none;
-    border: none;
-}
-
-.searchDiv{
-    border: 0.1px solid grey;
-    background-color: #f4f4f4;
-    border-radius: 5px;
-    display: flex;
-    padding-right: 5px;
-    align-items: center;
-    
-    
-}
-.searchDiv i{
-    font-size: 26px;
-    text-align: center;
-    opacity: 0.5;
-    margin-left: 5px;
-}
-.search::placeholder{
-    color:#989898 ;
-}
-.inputSection{
-    display: flex;
-    font-size: 14px;
-    gap: 20px;
-    align-items: center;
-    font-weight: 600;
-    
-}
-.signIn{
-    background-color: #e80071;
-    color: white;
-    padding: 0.5px 14px 0.5px 14px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    margin-left: 15px;
-}
-
-.inputSection>i{
-    font-size: 26px;
-    opacity: 0.8;
-    
-}
-
-.wrapper{
-   position: relative;
-    max-width: 1250px;
-    padding: 10px 30px;
-    margin: auto;
-    display: flex;
-    /* align-items: center; */
-    justify-content: space-between;
-    
-}
-
-.navlinks li a{
-   letter-spacing: 0.2px;
-   text-decoration: none;
-   list-style: none;
-   font-size: 14px;
-   font-weight: 600;
-   padding: 9px 15px;
-   color: #333246;
-
-}
-.navlinks li{
-    list-style: none;
-}
-.logo{
-    font-style: oblique 40deg;
-    
-    
-}
-
-.wrapper .navlinks{
-    display: inline-flex;
-
-}
-
-.mega-box{
-    position:absolute;
-    
-    top: 65px;
-    width: 40%;
-    left: 0;
-    opacity: 0;
-    visibility: hidden;
-    z-index: 100;
-    transition: all 0.3s ease;
-    background-color: #f3f3f3;
-    height: 300px;
-}
-.mega-box2{
-    position:absolute;
-    
-    top: 65px;
-    width: 30%;
-    left: 900px;
-    opacity: 0;
-    visibility: hidden;
-     /* display: none; */
-    transition: all 0.3s ease;
-    background-color: #f3f3f3;
-    height: 300px;
-    z-index: 100;
-}
-.mega-box3{
-    position:absolute;
-    
-    top: 65px;
-    width: 15%;
-    left: 1060px;
-    opacity: 0;
-    visibility: hidden;
-    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
-    transition: all 0.3s ease;
-    background-color: #f3f3f3;
-    height: 90px;
-    z-index: 100;
-     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; 
-}
-.mega-box4{
-    position:absolute;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    top: 65px;
-    width: 30%;
-    left: 960px;
-    /* opacity: 0; */
-    /* visibility: hidden; */
-     padding: 0px 20px 0px 20px;
-    transition: all 0.3s ease;
-    background-color: white;
-    height: 1000px;
-    max-height: 699px; /* Set a maximum height for scrolling */
-  overflow-y: auto;
-}
-.signup:hover .mega-box2{
-    /* top: 65px; */
-    /* margin-left: 900px; */
-    opacity: 1;
-    /* display: block; */
-    visibility: visible;
-    transition: all 1s ease;
-    
-}
-.btn:hover .mega-box3{
-   /* top: 65px; */
-    /* margin-left: 900px; */
-    opacity: 1;
-    /* display: block; */
-    visibility: visible;
-    transition: all 1s ease;
-   
-}
-/* .addtocart:hover .mega-box4{
-    /* opacity: 1; */
-    /* display: block; */
-    /* visibility: visible; */
-    /* transition: all 1s ease; */
-
-*/
-.mega-box3 button{
-  width: 100px;
-  margin: auto;
-  color: #fc2779;
-  border: 0.1px solid grey;
-  border-radius: 10px;
-}
-.mega-box3 button:hover{
-    background-color: #e1e1e2;
-}
-.mega-box3 button:active{
-    background-color: #c4c4cd;
-    width: 101px;
-    font-size: 12.5px;
-}
-.mega-box .content{
-    padding: 25px 20px;
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-}
-.mega-box2 .content{
-    padding: 25px 20px;
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-}
-.mega-box3 .content{
-    padding: 25px 20px;
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-}
-.content .row{
-    width: calc(25%-30%);
-    line-height: 45px;
-}
-.content .row img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-.content .row header{
-    font-size: 20px;
-}
-.content .row .mega-links{
-    
-    border-top: 1px solid black;
-}
-.row .mega-links{
-   display: grid;
-   grid-template-columns: repeat(3,1fr);
-   gap: 20px;
-}
-.row button{
-    border: 0.1px solid grey;
-    width: 300px;
-    border-radius: 10px;
-    margin-left: 20px;
-    color: #fc2779;
-    font-weight: 600;
-
-}
-.row button:hover{
-    background-color: #eeeeee;
-}
-.row button:active{
-    background-color: #dadada;
-}
-li:hover .mega-box{
-    top: 65px;
-    opacity: 1;
-    /* display: block; */
-    visibility: visible;
-    transition: all 0.9s ease;
-}
-
-
-#lowerNav button{
-    
-    color: #72717f;
-    font-size: 14px;
-    margin-right: 50px;
-    
-    
-}
-#lowerNav button:hover{
-    color: #fc2779;
-}
-#lowerNav{
-    
-    text-align: center;
-    background-color: white;
-    padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
-    
-   
-    
-    
-}
-.wrapper a:hover{
-    color: #fc2779;
-}
-
-
-
-
-.upperPart{
-  font-size: 20px;
-  display: inline;
-  
-  
-  
-  
-}
-.quantity{
-  display: inline;
-  margin-left: 20px;
-  opacity: 0.7;
-}
-
-.upper{
-    position: sticky;
-    top: 0;
-    background-color: white;
-    padding: 10px;
-    box-shadow: rgba(0, 0, 0, 0.06) 0px 0px 0px 2px inset;
-  margin: 0px -20px 20px -20px;
-  z-index: 2
-  
-}
-
-.logout{
-     background-color: #e80071;
-    color: white;
-    padding: 0.5px 14px 0.5px 14px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-
-}
-
-// .logout:hover{
-//     background-color: #e80071;
-//     color: black;
-//     border: 2px solid #e80071;
-// }
-
-
-@media (max-width: 768px) {
-    .navlinks {
-        margin: 0;
-        padding: 0
+        animation: fadeInOut 3s infinite;
+        opacity: 0;
     }
 
-    .wrapper{
+    @keyframes fadeInOut {
+        0%, 100% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0.8;
+        }
+    }
+
+    /* Main Navbar Styling */
+    nav {
+        background-color: #fff;
+        width: 100%;
+        z-index: 999;
+        height: 65px;
+        line-height: 40px;
+    }
+
+    .search {
+        color: black;
+        background-color: #f4f4f4;
+        border: none;
+        width: 100%;
+        max-width: 150px
+        padding: 5px 15px;
+        font-size: 14px;
+    }
+
+    .search:focus {
+        outline: none;
+        border: none;
+    }
+
+    .searchDiv {
+        border: 0.1px solid grey;
+        background-color: #f4f4f4;
+        border-radius: 5px;
+        display: flex;
+        padding-right: 5px;
+        align-items: center;
+    }
+
+    .searchDiv i {
+        font-size: 26px;
+        text-align: center;
+        opacity: 0.5;
+        margin-left: 5px;
+    }
+
+    .search::placeholder {
+        color: #989898;
+    }
+
+    .inputSection {
+        display: flex;
+        font-size: 14px;
+        gap: 20px;
+        align-items: center;
+        font-weight: 600;
+    }
+
+    .signIn {
+        background-color: #e80071;
+        color: white;
+        padding: 0.5px 14px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .inputSection > i {
+        font-size: 26px;
+        opacity: 0.8;
+    }
+
+    .wrapper {
+        position: relative;
+        width: auto;
+        padding: 10px 30px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    .navlinks li a {
+        letter-spacing: 0.2px;
+        text-decoration: none;
+        list-style: none;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 9px 15px;
+        color: #333246;
+    }
+
+    .navlinks li {
+        list-style: none;
+    }
+
+    .logo {
+        font-style: oblique 40deg;
+    }
+
+    .wrapper .navlinks {
+        display: inline-flex;
+    }
+
+    .mega-box,
+    .mega-box2,
+    .mega-box3,
+    .mega-box4 {
+        position: absolute;
+        top: 65px;
+        opacity: 0;
+        visibility: hidden;
+        z-index: 100;
+        transition: all 0.3s ease;
+        background-color: #f3f3f3;
+    }
+
+    .mega-box {
+        width: 40%;
+        height: 300px;
+        left: 0;
+    }
+
+    .mega-box2 {
+        width: 30%;
+        height: 300px;
+        left: 900px;
+    }
+
+    .mega-box3 {
+        width: 15%;
+        height: 90px;
+        left: 1060px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px;
+    }
+
+    .mega-box4 {
+        padding: 0px 20px;
+        width: 30%;
+        height: 699px;
+        left: 960px;
+        overflow-y: auto;
+    }
+
+    .signup:hover .mega-box2,
+    .btn:hover .mega-box3 {
+        opacity: 1;
+        visibility: visible;
+        transition: all 1s ease;
+    }
+
+    .mega-box3 button {
+        width: 100px;
+        margin: auto;
+        color: #fc2779;
+        border: 0.1px solid grey;
+        border-radius: 10px;
+    }
+
+    .mega-box3 button:hover {
+        background-color: #e1e1e2;
+    }
+
+    .mega-box .content,
+    .mega-box2 .content,
+    .mega-box3 .content {
+        padding: 25px 20px;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .row button {
+        border: 0.1px solid grey;
+        width: 300px;
+        border-radius: 10px;
+        margin-left: 20px;
+        color: #fc2779;
+        font-weight: 600;
+    }
+
+    .row button:hover {
+        background-color: #eeeeee;
+    }
+
+    li:hover .mega-box {
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.9s ease;
+    }
+
+    #lowerNav button {
+        color: #72717f;
+        font-size: 14px;
+        margin-right: 50px;
+    }
+
+    #lowerNav button:hover {
+        color: #fc2779;
+    }
+
+    #lowerNav {
+        text-align: center;
+        background-color: white;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    }
+
+    /* Hide mega-box after 1200px */
+    @media (max-width: 1200px) {
+        .mega-box,
+        .mega-box2,
+        .mega-box3,
+        .mega-box4 {
+            display: none !important;
+        }
+    }
+
+    @media (max-width: 768px) {
+    .navlinks {
+        display: none !important;
+    }
+
+    .wrapper {
         padding-left: 20px;
-        padding-right: 20px
+        padding-right: 20px;
+        justify-content: space-between;
     }
 
-    .searchDiv{
-         width: 400px
+    .mega-box,
+    .mega-box2,
+    .mega-box3,
+    .mega-box4 {
+        display: none !important;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 680px) {
+
+    position: sticky;
+    z-index: 1000;
+    
     .navlinks {
-        display: none;
+        display: none !important;
+    }
+
+    .upperNav {
+        display: none !important;
+    }
+
+    .logo  {
+        height: 40px;
+        fontSize: 20px;
+    }
+
+    .wrapper {
+        position: sticky;
+        width: auto;
+        padding: 10px 30px;
+        height: 120px;
+        align-items: center;
+        margin-top: 0;
+        margin-bottom: 25px;
+        padding-bottom: 25px;
+        background-color: white;
+    
+    }
+
+    .searchDiv {
+        width: auto;
+        max-width: 180px;
+        position: sticky;
+        top: 40px; /* Provide margin from logo */
+        background: white;
+    }
+
+    .mega-box,
+    .mega-box2,
+    .mega-box3,
+    .mega-box4 {
+        display: none !important;
+    }
+}
+
+@media (max-width: 572px) {
+    .logo {
+        font-size: 20px;
     }
 
     .wrapper{
-        margin-top: 0;
-    }
-
-    .navlinks {
-        display: none;
+        flex-direction: column;
     }
 }
-`
+
+/* Additional specificity for <ul> inside .navlinks */
+.navlinks ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Hide <li> specifically */
+@media (max-width: 1038px) {
+    .navlinks ul li {
+        display: none !important;
+    }
+}
+
+`;

@@ -163,6 +163,7 @@ export const Home = () => {
 
         <DIV className='Container'>
             <Navbar />
+            <div className='bodyContainer'>
             <div className='slide'>
                 <Carousel responsive={responsive}>
                     <div>
@@ -365,6 +366,7 @@ export const Home = () => {
             </div>
 
             <br />
+            </div>
             <Footer />
         </DIV>
     )
@@ -372,6 +374,14 @@ export const Home = () => {
 
 
 const DIV = styled.div`
+
+    .Container{
+        margin-top: 200px;
+    }
+
+    .bodyContainer{
+        margin-top: 20px;
+    }
     .slide {
         padding: 13px;
         position: relative;
