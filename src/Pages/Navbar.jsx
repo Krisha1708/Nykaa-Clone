@@ -278,6 +278,7 @@ const DIV = styled.div`
     position: sticky;
     top: 0;
     z-index: 1000;
+    /* overflow: hidden: */
 
 
     .hr {
@@ -430,91 +431,165 @@ const DIV = styled.div`
         display: inline-flex;
     }
 
-    .mega-box,
-    .mega-box2,
-    .mega-box3,
-    .mega-box4 {
-        position: absolute;
-        top: 65px;
-        opacity: 0;
-        visibility: hidden;
-        z-index: 100;
-        transition: all 0.3s ease;
-        background-color: #f3f3f3;
-    }
+    .mega-box{
+    position:absolute;
+    
+    top: 65px;
+    width: 40%;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 100;
+    transition: all 0.3s ease;
+    background-color: #f3f3f3;
+    height: 300px;
+}
+.mega-box2{
+    position:absolute;
+    
+    top: 65px;
+    width: 30%;
+    left: 900px;
+    opacity: 0;
+    visibility: hidden;
+     /* display: none; */
+    transition: all 0.3s ease;
+    background-color: #f3f3f3;
+    height: 300px;
+    z-index: 100;
+}
+.mega-box3{
+    position:absolute;
+    
+    top: 65px;
+    width: 15%;
+    left: 1060px;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+    transition: all 0.3s ease;
+    background-color: #f3f3f3;
+    height: 90px;
+    z-index: 100;
+     box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; 
+}
+.mega-box4{
+    position:absolute;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    top: 65px;
+    width: 30%;
+    left: 960px;
+    /* opacity: 0; */
+    /* visibility: hidden; */
+     padding: 0px 20px 0px 20px;
+    transition: all 0.3s ease;
+    background-color: white;
+    height: 1000px;
+    max-height: 699px; /* Set a maximum height for scrolling */
+  overflow-y: auto;
+}
+.signup:hover .mega-box2{
+    /* top: 65px; */
+    /* margin-left: 900px; */
+    opacity: 1;
+    /* display: block; */
+    visibility: visible;
+    transition: all 1s ease;
+    
+}
+.btn:hover .mega-box3{
+   /* top: 65px; */
+    /* margin-left: 900px; */
+    opacity: 1;
+    /* display: block; */
+    visibility: visible;
+    transition: all 1s ease;
+   
+}
+/* .addtocart:hover .mega-box4{
+    /* opacity: 1; */
+    /* display: block; */
+    /* visibility: visible; */
+    /* transition: all 1s ease; */
 
-    .mega-box {
-        width: 40%;
-        height: 300px;
-        left: 0;
-    }
+*/
+.mega-box3 button{
+  width: 100px;
+  margin: auto;
+  color: #fc2779;
+  border: 0.1px solid grey;
+  border-radius: 10px;
+}
+.mega-box3 button:hover{
+    background-color: #e1e1e2;
+}
+.mega-box3 button:active{
+    background-color: #c4c4cd;
+    width: 101px;
+    font-size: 12.5px;
+}
+.mega-box .content{
+    padding: 25px 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.mega-box2 .content{
+    padding: 25px 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.mega-box3 .content{
+    padding: 25px 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+.content .row{
+    width: calc(25%-30%);
+    line-height: 45px;
+}
+.content .row img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.content .row header{
+    font-size: 20px;
+}
+.content .row .mega-links{
+    
+    border-top: 1px solid black;
+}
+.row .mega-links{
+   display: grid;
+   grid-template-columns: repeat(3,1fr);
+   gap: 20px;
+}
+.row button{
+    border: 0.1px solid grey;
+    width: 300px;
+    border-radius: 10px;
+    margin-left: 20px;
+    color: #fc2779;
+    font-weight: 600;
 
-    .mega-box2 {
-        width: 30%;
-        height: 300px;
-        left: 900px;
-    }
+}
+.row button:hover{
+    background-color: #eeeeee;
+}
+.row button:active{
+    background-color: #dadada;
+}
+li:hover .mega-box{
+    top: 65px;
+    opacity: 1;
+    /* display: block; */
+    visibility: visible;
+    transition: all 0.9s ease;
+}
 
-    .mega-box3 {
-        width: 15%;
-        height: 90px;
-        left: 1060px;
-        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px;
-    }
-
-    .mega-box4 {
-        padding: 0px 20px;
-        width: 30%;
-        height: 699px;
-        left: 960px;
-        overflow-y: auto;
-    }
-
-    .signup:hover .mega-box2,
-    .btn:hover .mega-box3 {
-        opacity: 1;
-        visibility: visible;
-        transition: all 1s ease;
-    }
-
-    .mega-box3 button {
-        width: 100px;
-        margin: auto;
-        color: #fc2779;
-        border: 0.1px solid grey;
-        border-radius: 10px;
-    }
-
-    .mega-box3 button:hover {
-        background-color: #e1e1e2;
-    }
-
-    .mega-box .content,
-    .mega-box2 .content,
-    .mega-box3 .content {
-        padding: 25px 20px;
-        display: flex;
-        justify-content: space-around;
-    }
-
-    .row button {
-        border: 0.1px solid grey;
-        width: 300px;
-        border-radius: 10px;
-        margin-left: 20px;
-        color: #fc2779;
-        font-weight: 600;
-    }
-
-    .row button:hover {
-        background-color: #eeeeee;
-    }
-
-    li:hover .mega-box {
-        opacity: 1;
-        visibility: visible;
-        transition: all 0.9s ease;
-    }
 
     #lowerNav button {
         color: #72717f;
@@ -532,6 +607,22 @@ const DIV = styled.div`
         padding: 10px;
         box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
     }
+
+    .logout{
+     background-color: #e80071;
+    color: white;
+    padding: 0.5px 14px 0.5px 14px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+
+}
+
+// .logout:hover{
+//     background-color: #e80071;
+//     color: black;
+//     border: 2px solid #e80071;
+// }
 
     /* Hide mega-box after 1200px */
     @media (max-width: 1200px) {
@@ -575,7 +666,7 @@ const DIV = styled.div`
         display: none !important;
     }
 
-    .logo  {
+    .logo {
         height: 40px;
         fontSize: 20px;
     }
@@ -621,7 +712,7 @@ const DIV = styled.div`
         gap: 5px;
     }
 
-    .signIn{
+    .signIn, logout{
         padding: 0.5px, 4px;
         width: 80px;
         font-size: 12px;
