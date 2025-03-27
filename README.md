@@ -22,3 +22,5 @@ Local Storage for cart persistence.
 
 📸 Screenshots
 Key screenshots of the home page, product listings, cart, and checkout for better visualization.
+
+![Screenshot 2025-03-28 044121](https://github.com/user-attachments/assets/d6f152ef-5729-4a1e-8488-284388e235e8)
